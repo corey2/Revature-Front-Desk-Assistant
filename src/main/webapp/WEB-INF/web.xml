@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+	      http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+	<display-name>Archetype Created Web Application</display-name>
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<display-name>LoginController</display-name>
+		<servlet-name>LoginController</servlet-name>
+		<servlet-class>com.controllers.java.LoginController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginController</servlet-name>
+		<url-pattern>/LoginController</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<display-name>AdminController</display-name>
+		<servlet-name>AdminController</servlet-name>
+		<servlet-class>com.controllers.java.AdminController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AdminController</servlet-name>
+		<url-pattern>/AdminController</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<display-name>AssociateController</display-name>
+		<servlet-name>AssociateController</servlet-name>
+		<servlet-class>com.controllers.java.AssociateController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AssociateController</servlet-name>
+		<url-pattern>/AssociateController</url-pattern>
+	</servlet-mapping>
+
+
+	<!-- Corey's servlets -->
+
+	<servlet>
+		<servlet-name>Send Login Credentials</servlet-name>
+		<servlet-class>com.controllers.java.PasswordController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Send Login Credentials</servlet-name>
+		<url-pattern>/sendLoginEmail</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Send Confirmation</servlet-name>
+		<servlet-class>com.controllers.java.SubmissionEmailController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Send Confirmation</servlet-name>
+		<url-pattern>/sendConfirmationEmail</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Password Servlet</servlet-name>
+		<servlet-class>com.controllers.java.PasswordController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Password Servlet</servlet-name>
+		<url-pattern>/passwordController</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Contact Servlet</servlet-name>
+		<servlet-class>com.controllers.java.ContactController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Contact Servlet</servlet-name>
+		<url-pattern>/sendMessageToHR</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>User Servlet</servlet-name>
+		<servlet-class>com.controllers.java.UserController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>User Servlet</servlet-name>
+		<url-pattern>/changeUserInfo</url-pattern>
+	</servlet-mapping>
+	
+	
+
+</web-app>
+
+
