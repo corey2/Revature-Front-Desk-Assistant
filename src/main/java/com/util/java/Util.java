@@ -21,18 +21,14 @@ public class Util {
 /*                InputStream inputStream = Util.class.getClassLoader().getResourceAsStream("db-config.properties");
                 prop.load(inputStream);*/
 				String driver = "oracle.jdbc.OracleDriver";
-				String url = "jdbc:oracle:thin:@rdbs-sudo.cwboiusxaivt.us-east-1.rds.amazonaws.com:1521:ORCL";
-				String user = "ldclauss2";
-				String password = "Kirito7887";
+				String url = "jdbc:oracle:thin:@rfda.ct6hxvbzykg1.us-west-2.rds.amazonaws.com:1521:ORCL";
+				String user = "clshaps93";
+				String password = "coreyls93";
 				Class.forName(driver);
 				connection = DriverManager.getConnection(url, user, password);
-			} catch (ClassNotFoundException e) {
+			} catch (Exception e) {
 				e.printStackTrace();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			} /*catch (IOException e) {
-				e.printStackTrace();
-			}*/
+			}
 			return connection;
 		}
 	}

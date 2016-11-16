@@ -13,7 +13,7 @@ public class AssociatePOJO {
 	private int zip;
 	private Date arrivalDate;
 	private String methodOfTrans;
-	private int carDuringTraining;
+	private String carDuringTraining;
 	private String email;
 	private long phoneNumber;
 	
@@ -28,7 +28,7 @@ public class AssociatePOJO {
 		this.zip = -1;
 		this.arrivalDate = null;
 		this.methodOfTrans = null;
-		this.carDuringTraining = -1;
+		this.carDuringTraining = null;
 		this.email = null;
 		this.phoneNumber = -1;
 	}
@@ -36,7 +36,7 @@ public class AssociatePOJO {
 	public AssociatePOJO(String username, String firstName, String lastName, 
 			              String sex, String address, String city, String state,
 			              int zip, int phoneNumber, Date date, String methodOfTrans,
-			              int carDuringTraining, String email){
+			              String carDuringTraining, String email){
 		this.username = username;
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -187,13 +187,13 @@ public class AssociatePOJO {
 	/**
 	 * @return the carDuringTraining
 	 */
-	public int getCarDuringTraining() {
+	public String getCarDuringTraining() {
 		return carDuringTraining;
 	}
 	/**
 	 * @param carDuringTraining the carDuringTraining to set
 	 */
-	public void setCarDuringTraining(int carDuringTraining) {
+	public void setCarDuringTraining(String carDuringTraining) {
 		this.carDuringTraining = carDuringTraining;
 	}
 	/**

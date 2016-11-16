@@ -1,7 +1,6 @@
 package com.controllers.java;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -13,11 +12,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.Dao.java.AdminDAO;
-import com.Dao.java.LoginDAO;
 import com.pojos.java.AdminPOJO;
 import com.pojos.java.AssociatePOJO;
 import com.pojos.java.Capitalizer;
-import com.pojos.java.LoginPOJO;
+
 
 @SuppressWarnings("serial")
 public class AdminController extends HttpServlet{
@@ -27,10 +25,10 @@ public class AdminController extends HttpServlet{
 	private RequestDispatcher view;
 	private static String HOME = "/Admin.jsp";
 	private static String DASHBOARD = "/AdminDash.jsp";
-	private static String ADD_ASSOCIATE = "/Add.jsp";
+	//private static String ADD_ASSOCIATE = "/Add.jsp";
 	private static String UPDATE_ASSOCIATE = "/Update.jsp";
 	private static String UPDATE_COMPLETE = "/UpdateComplete.jsp";
-	private static String DELETE_ASSOCIATE = "/Delete.jsp";
+	//private static String DELETE_ASSOCIATE = "/Delete.jsp";
 	private static String SEARCH_ASSOCIATE = "/Search.jsp";
 	
 	
@@ -107,14 +105,7 @@ public class AdminController extends HttpServlet{
         	associate.setZip(Integer.parseInt(request.getParameter("zip")));
         	associate.setPhoneNumber(Long.parseLong(request.getParameter("phoneNum")));
             associate.setMethodOfTrans(request.getParameter("methTrans"));
-            
-            final String temp = request.getParameter("hasCar");
-    		if(temp.equals("Yes")){
-    			associate.setCarDuringTraining(1);
-    		}
-    		else if(temp.equals("No")){
-    			associate.setCarDuringTraining(0);
-    		}
+            associate.setCarDuringTraining(request.getParameter("hasCar"));
             
             try { 
             	Date date = new SimpleDateFormat("MM.dd.yyyy").parse(request.getParameter("date"));

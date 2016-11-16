@@ -19,9 +19,9 @@ public class AssociateDAO {
 	public void updateAssociate(AssociatePOJO associate){
         try {
             PreparedStatement preparedStatement = connection
-                    .prepareStatement("update associates set firstname=?, lastname=?, sex=?, address=?," +
-                            		  "city=?, stateabv=?, zip=?, dateArival=?, methTrans=?," +
-                    		          "carDuringTrain=?, email=?, phoneNum=? where username=?");
+                    .prepareStatement("update associate set firstname=?, lastname=?, sex=?, address=?," +
+                            		  "city=?, state=?, zip=?, arrivalDate=?, methodOfTrans=?," +
+                    		          "carDuringTraining=?, email=?, phoneNumber=? where username=?");
             // Parameters start with 1
             preparedStatement.setString(1, associate.getFirstName());
             preparedStatement.setString(2, associate.getLastName());
@@ -42,7 +42,7 @@ public class AssociateDAO {
             }
             
             preparedStatement.setString(9, associate.getMethodOfTrans());
-            preparedStatement.setInt(10, associate.getCarDuringTraining());
+            preparedStatement.setString(10, associate.getCarDuringTraining());
             preparedStatement.setString(11, associate.getEmail());
             preparedStatement.setLong(12, associate.getPhoneNumber());
             preparedStatement.setString(13, associate.getUsername());         
@@ -58,7 +58,7 @@ public class AssociateDAO {
     	AssociatePOJO associate = null;
         try {
 			preparedStatement = connection.
-				prepareStatement("select * from associates where username=?");
+				prepareStatement("select * from associate where username=?");
 			preparedStatement.setString(1, username);
 			ResultSet rs = preparedStatement.executeQuery();
 	        while (rs.next()) {
@@ -75,7 +75,7 @@ public class AssociateDAO {
 	    AssociatePOJO associate = null;
         try {
 		   preparedStatement = connection.
-			   prepareStatement("select * from associates where firstname=? and lastname=?");
+			   prepareStatement("select * from associate where firstname=? and lastname=?");
 	       preparedStatement.setString(1, firstName);
 	       preparedStatement.setString(2, lastName);
 	       ResultSet rs = preparedStatement.executeQuery();
@@ -93,7 +93,7 @@ public class AssociateDAO {
 	    AssociatePOJO associate = null;
         try {
 		   preparedStatement = connection.
-			   prepareStatement("select * from associates where email=?");
+			   prepareStatement("select * from associate where email=?");
 	       preparedStatement.setString(1, email);
 	       ResultSet rs = preparedStatement.executeQuery();
 	       while (rs.next()) {
@@ -114,13 +114,13 @@ public class AssociateDAO {
 		associate.setSex(rs.getString("sex"));
 		associate.setAddress(rs.getString("address"));
 		associate.setCity(rs.getString("city"));
-	    associate.setState(rs.getString("stateabv"));
+	    associate.setState(rs.getString("state"));
 	    associate.setZip(rs.getInt("zip"));
-	    associate.setArrivalDate(rs.getDate("dateArival"));
-	    associate.setMethodOfTrans(rs.getString("methTrans"));
-	    associate.setCarDuringTraining(rs.getInt("carDuringTrain"));
+	    associate.setArrivalDate(rs.getDate("arrivalDate"));
+	    associate.setMethodOfTrans(rs.getString("methodOfTrans"));
+	    associate.setCarDuringTraining(rs.getString("carDuringTraining"));
 	    associate.setEmail(rs.getString("email"));
-	    associate.setPhoneNumber(rs.getLong("phoneNum"));
+	    associate.setPhoneNumber(rs.getLong("phoneNumber"));
     	return associate;
     }
     

@@ -53,22 +53,16 @@ public class AssociateController extends HttpServlet {
 		associate.setState(request.getParameter("state"));
 		associate.setZip(Integer.parseInt(request.getParameter("zip")));
 		associate.setPhoneNumber(Long.parseLong(request.getParameter("phoneNum")));
-
+		associate.setMethodOfTrans(request.getParameter("methTrans"));
+		associate.setCarDuringTraining(request.getParameter("hasCar"));
+		
 		try {
 			Date dob = new SimpleDateFormat("MM.dd.yyyy").parse(request.getParameter("date"));
 			associate.setArrivalDate(dob);
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-		associate.setMethodOfTrans(request.getParameter("methTrans"));
 		
-		final String temp = request.getParameter("hasCar");
-		if(temp.equals("Yes")){
-			associate.setCarDuringTraining(1);
-		}
-		else if(temp.equals("No")){
-			associate.setCarDuringTraining(0);
-		}
 		dao.updateAssociate(associate);
 		
 		request.setAttribute("associate", associate);

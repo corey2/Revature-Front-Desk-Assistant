@@ -23,7 +23,7 @@ public class AdminDAO extends AssociateDAO {
 	public void addAssociate(AssociatePOJO associate) {
 		try {
 			PreparedStatement preparedStatement = connection
-					.prepareStatement("insert into associates(username,firstName,lastName,email) values (?, ?, ?, ? )");
+					.prepareStatement("insert into associate(username,firstName,lastName,email) values (?, ?, ?, ? )");
 			// Parameters start with 1
 			preparedStatement.setString(1, associate.getUsername());
 			preparedStatement.setString(2, associate.getFirstName());
@@ -38,7 +38,7 @@ public class AdminDAO extends AssociateDAO {
 	public void deleteAssociate(String username){
         try {
             PreparedStatement preparedStatement = connection
-                    .prepareStatement("delete from associates where username=?");
+                    .prepareStatement("delete from associate where username=?");
             // Parameters start with 1
             preparedStatement.setString(1, username);
             preparedStatement.execute();
@@ -52,7 +52,7 @@ public class AdminDAO extends AssociateDAO {
 		List<AssociatePOJO> associateList = new ArrayList<AssociatePOJO>();
 		try {
 			Statement statement = connection.createStatement();
-			ResultSet rs = statement.executeQuery("select * from associates");
+			ResultSet rs = statement.executeQuery("select * from associate");
 			while (rs.next()) {
 				associate = buildAssociate(rs);
 				associateList.add(associate);
@@ -66,7 +66,7 @@ public class AdminDAO extends AssociateDAO {
 	public void addAdmin(AdminPOJO admin) {
 		try {
 			PreparedStatement preparedStatement = connection
-					.prepareStatement("insert into admins(username,firstName,lastName,email) values (?, ?, ?, ? )");
+					.prepareStatement("insert into admin(username,firstName,lastName,email) values (?, ?, ?, ? )");
 			// Parameters start with 1
 			preparedStatement.setString(1, admin.getUsername());
 			preparedStatement.setString(2, admin.getFirstName());
@@ -81,7 +81,7 @@ public class AdminDAO extends AssociateDAO {
 	public void updateAdmin(AdminPOJO admin) {
         try {
             PreparedStatement preparedStatement = connection
-                    .prepareStatement("update admins set firstname=?, lastname=?, email=?, where username=?");
+                    .prepareStatement("update admin set firstname=?, lastname=?, email=?, where username=?");
             preparedStatement.setString(1, admin.getFirstName());
             preparedStatement.setString(2, admin.getLastName());
             preparedStatement.setString(3, admin.getEmail());
@@ -96,7 +96,7 @@ public class AdminDAO extends AssociateDAO {
 	public void deleteAdmin(String username) {
         try {
             PreparedStatement preparedStatement = connection
-                    .prepareStatement("delete from admins where username=?");
+                    .prepareStatement("delete from admin where username=?");
             preparedStatement.setString(1, username);
             preparedStatement.execute();
         } catch (SQLException e) {
@@ -109,7 +109,7 @@ public class AdminDAO extends AssociateDAO {
     	AdminPOJO admin = null;
         try {
 			preparedStatement = connection.
-				prepareStatement("select * from admins where ?=?");
+				prepareStatement("select * from admin where ?=?");
 			preparedStatement.setString(1, cName);
 			preparedStatement.setString(2, cValue);
 			ResultSet rs = preparedStatement.executeQuery();
