@@ -1,11 +1,7 @@
 package com.util.java;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.util.Properties;
 
 public class Util {
 	private static Connection connection = null;
@@ -18,8 +14,8 @@ public class Util {
 		else {
 			try {
                 //Properties prop = new Properties();
-/*                InputStream inputStream = Util.class.getClassLoader().getResourceAsStream("db-config.properties");
-                prop.load(inputStream);*/
+                //InputStream inputStream = Util.class.getClassLoader().getResourceAsStream("db-config.properties");
+                //prop.load(inputStream);
 				String driver = "oracle.jdbc.OracleDriver";
 				String url = "jdbc:oracle:thin:@rfda.ct6hxvbzykg1.us-west-2.rds.amazonaws.com:1521:ORCL";
 				String user = "clshaps93";

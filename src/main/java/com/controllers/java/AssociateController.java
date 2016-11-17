@@ -40,6 +40,8 @@ public class AssociateController extends HttpServlet {
 		view.forward(request, response);
 	}
 
+	//This method prepares a POJO that is used by the DAO to update an associate in the database after that associate fills out the
+	//associate form.
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 	throws ServletException, IOException {
 		associate = new AssociatePOJO();

@@ -11,21 +11,22 @@ import javax.servlet.http.HttpServletResponse;
 import com.Dao.java.LoginDAO;
 import com.pojos.java.LoginPOJO;
 
+
+@SuppressWarnings("serial")
 public class UserController extends HttpServlet {
-	private static final long serialVersionUID = 1L;
 	private LoginDAO dao;
 	private LoginPOJO login;
 	private RequestDispatcher view;
-	
-	private static String SEARCH_ASSOCIATE = "/Search.jsp";
+
 	private static String HOME = "/Admin.jsp";
-	private static String LOGIN = "/Login.jsp";
 	
 	public UserController() {
 		super();
 		dao = new LoginDAO();
 	}
 	
+	//This controller is used after an associate is deleted from the Associate table to delete that associate's login information
+	//in the Login table.
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 	throws IOException, ServletException {
 		login = new LoginPOJO();

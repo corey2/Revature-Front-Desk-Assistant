@@ -1,7 +1,5 @@
 package com.Dao.java;
 
-import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -11,7 +9,7 @@ import java.util.List;
 
 import com.pojos.java.AdminPOJO;
 import com.pojos.java.AssociatePOJO;
-import com.util.java.Util;
+
 
 public class AdminDAO extends AssociateDAO {
 	//private Connection connection = null;
@@ -20,11 +18,11 @@ public class AdminDAO extends AssociateDAO {
 		super();
 	}
 
+	//Prepared statement parameters start with 1.
 	public void addAssociate(AssociatePOJO associate) {
 		try {
 			PreparedStatement preparedStatement = connection
-					.prepareStatement("insert into associate(username,firstName,lastName,email) values (?, ?, ?, ? )");
-			// Parameters start with 1
+					.prepareStatement("insert into associate(username,firstName,lastName,email) values (?,?,?,?)");
 			preparedStatement.setString(1, associate.getUsername());
 			preparedStatement.setString(2, associate.getFirstName());
 			preparedStatement.setString(3, associate.getLastName());
@@ -39,7 +37,6 @@ public class AdminDAO extends AssociateDAO {
         try {
             PreparedStatement preparedStatement = connection
                     .prepareStatement("delete from associate where username=?");
-            // Parameters start with 1
             preparedStatement.setString(1, username);
             preparedStatement.execute();
         } catch (SQLException e) {

@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.Dao.java.AdminDAO;
-import com.Dao.java.AssociateDAO;
 import com.Dao.java.LoginDAO;
 import com.pojos.java.AdminPOJO;
 import com.pojos.java.AssociatePOJO;
@@ -16,7 +15,7 @@ import com.pojos.java.EmailGenerator;
 import com.pojos.java.LoginPOJO;
 import com.pojos.java.PasswordHelper;
 
-//Get information from the database use it to set 
+
 public class PasswordController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private AssociatePOJO associate;
@@ -44,10 +43,10 @@ public class PasswordController extends HttpServlet {
 		String subject = null;
 		String body = null;
 		
-		if (passwordType.equals("temp")) {   
+		if (passwordType.equals("temp")) {  
 			String password = PasswordHelper.generatepw();
 			String hashword = PasswordHelper.hashpw(password);
-			if (this.getServletContext().getAttribute("userRole") != null) {  //This runs right after an admin adds an associate to the database
+			if (this.getServletContext().getAttribute("userRole") != null) {  //This runs right after an admin adds a user to the database.
 				int currentRole = (int) this.getServletContext().getAttribute("userRole");
 				String userType = request.getParameter("userType");
 				if (currentRole == 2) {

@@ -1,7 +1,6 @@
 package com.Dao.java;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,13 +15,13 @@ public class AssociateDAO {
 		connection = Util.getConnection();
 	}
 	
+	//Prepared statement parameters start with 1.
 	public void updateAssociate(AssociatePOJO associate){
         try {
             PreparedStatement preparedStatement = connection
                     .prepareStatement("update associate set firstname=?, lastname=?, sex=?, address=?," +
                             		  "city=?, state=?, zip=?, arrivalDate=?, methodOfTrans=?," +
                     		          "carDuringTraining=?, email=?, phoneNumber=? where username=?");
-            // Parameters start with 1
             preparedStatement.setString(1, associate.getFirstName());
             preparedStatement.setString(2, associate.getLastName());
             preparedStatement.setString(3, associate.getSex());

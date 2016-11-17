@@ -1,7 +1,6 @@
 package com.controllers.java;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,6 +12,7 @@ import com.Dao.java.LoginDAO;
 import com.pojos.java.LoginPOJO;
 import com.pojos.java.PasswordHelper;
 
+//This controller is used to confirm the given password and assign a user role when a user logs in.
 @SuppressWarnings("serial")
 public class LoginController extends HttpServlet{
 	private LoginDAO dao;

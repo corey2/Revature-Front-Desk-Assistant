@@ -14,10 +14,9 @@ import com.pojos.java.EmailGenerator;
 
 
 //This controller is used when someone fills out the Contact Human Resources form.
+@SuppressWarnings("serial")
 public class ContactController extends HttpServlet {
-	private static final long serialVersionUID = 1L;
 	private AssociateDAO dao;
-	private AssociatePOJO associate;
 	private RequestDispatcher view;
 	private static String SUBMIT_EMAIL = "SubmitEmailView.jsp";
 	

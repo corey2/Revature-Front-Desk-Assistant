@@ -286,7 +286,7 @@
  <div class="copyright-section">
             <p>2016 &copy; All Rights Reserved   <a target="_blank" href="https://www.russellgooch.com">Team Sudo</a></p>
             <ul class="social-icons">
-                <li><a href="#" data-original-title="Facebook" class="social_facebook rounded-x"></a></li>
+                <li><a href="www.facebook.com" data-original-title="Facebook" class="social_facebook rounded-x"></a></li>
                 <li><a href="#" data-original-title="Twitter" class="social_twitter rounded-x"></a></li>
                 <li><a href="#" data-original-title="Goole Plus" class="social_googleplus rounded-x"></a></li>
                 <li><a href="#" data-original-title="Pinterest" class="social_pintrest rounded-x"></a></li>

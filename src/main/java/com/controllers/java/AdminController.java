@@ -18,7 +18,7 @@ import com.pojos.java.Capitalizer;
 
 
 @SuppressWarnings("serial")
-public class AdminController extends HttpServlet{
+public class AdminController extends HttpServlet {
 	private AdminDAO dao;
 	private AssociatePOJO associate;
 	private AdminPOJO admin;
@@ -37,35 +37,39 @@ public class AdminController extends HttpServlet{
         dao = new AdminDAO();
     }
     
+    //This method handles situations where associate-related information needs to be saved as the admin links from one page in
+    //the web application to another.
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String behavior = request.getParameter("behavior");
         
-    	if (behavior.equalsIgnoreCase("listAssociates")) {
+    	if (behavior.equalsIgnoreCase("listAssociates")) {  //Admin.jsp -> AdminDash.jsp
     		request.setAttribute("associates", dao.getAllAssociates());
     		view = request.getRequestDispatcher(DASHBOARD);
-    	} else if (behavior.equalsIgnoreCase("update")){
+    	} else if (behavior.equalsIgnoreCase("update")){  //AdminDash.jsp or Search.jsp -> Update.jsp
             String associateUsername = request.getParameter("associateUN");
             associate = dao.getAssociate(associateUsername);
             request.setAttribute("associate", associate);
             view = request.getRequestDispatcher(UPDATE_ASSOCIATE);
-        } else if (behavior.equalsIgnoreCase("delete")){
+        } else if (behavior.equalsIgnoreCase("delete")){  //AdminDash.jsp -> Search.jsp
         	String associateUsername = request.getParameter("associateUN");
             associate = dao.getAssociate(associateUsername);
             request.setAttribute("associate", associate);
             view = request.getRequestDispatcher(SEARCH_ASSOCIATE);
-        } else {
+        } else {  //Error
             System.out.println("You should have passed a parameter to the admin controller but you didn't");
         	view = request.getRequestDispatcher(HOME);
         }
         view.forward(request, response);
     }
     
+    //This method handles situations where an admin wants to an interact with the database. This is done by setting up POJOs
+    //and passing them as parameters to DAO methods.
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	associate = new AssociatePOJO();
     	admin = new AdminPOJO();
     	String crudMethod = request.getParameter("crudMethod");
-    		
-    	if (crudMethod.equals("create")) {
+    	
+    	if (crudMethod.equals("create")) {   //From Create.jsp 
     		if (request.getParameter("userType").equals("associate")) {
 	    		associate.setUsername(request.getParameter("newUN"));
 	        	associate.setFirstName(Capitalizer.use(request.getParameter("firstName")));
@@ -82,7 +86,7 @@ public class AdminController extends HttpServlet{
     		view = request.getRequestDispatcher("/sendLoginEmail");
     	}
     	
-    	if (crudMethod.equals("read")) {
+    	if (crudMethod.equals("read")) {    //From Search.jsp
     		String fn = Capitalizer.use(request.getParameter("firstName"));
     		String ln = Capitalizer.use(request.getParameter("lastName"));
     		String fntrim = fn.trim();
@@ -92,8 +96,8 @@ public class AdminController extends HttpServlet{
     		view = request.getRequestDispatcher(SEARCH_ASSOCIATE);
     	}
     	
-    	
-    	if (crudMethod.equals("update")) {
+    	//Prepares a POJO to change/add associate records in the database 
+    	if (crudMethod.equals("update")) {   //From Update.jsp
         	associate.setUsername(request.getParameter("associateUN"));
         	associate.setFirstName(Capitalizer.use(request.getParameter("firstName")));
         	associate.setLastName(Capitalizer.use(request.getParameter("lastName")));
@@ -121,11 +125,8 @@ public class AdminController extends HttpServlet{
         
         if (crudMethod.equals("delete")) {
         	//System.out.println("Username = "+request.getParameter("associateUN"));
-        	dao.deleteAssociate(request.getParameter("associateUN"));
+        	dao.deleteAssociate(request.getParameter("associateUN"));  //From Search.jsp
         	view = request.getRequestDispatcher("/changeUserInfo");
-        	
-        	
-        	
         }
         view.forward(request, response);
     
