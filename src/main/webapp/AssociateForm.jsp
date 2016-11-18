@@ -327,6 +327,23 @@
 										<option value="Train" name="train" id="train">Train</option>
 										<option value="Boat" name="boat" id="boat">Boat</option>
 									</select>
+									
+									<script>
+										function setSelectedIndex(a, b) {
+											for (var i = 0; i < a.options.length; i++) {
+												if (a.options[i].text == b) {
+													a.options[i].selected = true;
+													return;
+												}
+											}
+										
+										}
+										
+										var ra = "${associate.methodOfTrans}";
+										//window.alert(ra);
+										setSelectedIndex(document.getElementById("methTrans"), ra);
+									</script>
+														
 									<!--  <span class="field-validation-valid" data-valmsg-for="methTrans" data-valmsg-replace="true"></span> -->
 								</div>
 							</div>
@@ -336,11 +353,11 @@
 							<div class="row margin-bottom-20">
 								<div class="col-md-8 col-md-offset-0">
 									<c:choose>
-										<c:when test="${associate.carDuringTraining == 1}">
+										<c:when test="${associate.carDuringTraining == 'Yes'}">
 											<input type="radio" name="hasCar" value="Yes" id=6 checked/>Yes<input
 											type="radio" name="hasCar" value="No" id=7/>No<br>
 										</c:when>
-										<c:when test="${associate.carDuringTraining == 0}">
+										<c:when test="${associate.carDuringTraining == 'No'}">
 											<input type="radio" name="hasCar" value="Yes" id=6/>Yes<input
 											type="radio" name="hasCar" value="No" id=7 checked/>No<br>
 										</c:when>
@@ -436,12 +453,22 @@
 		src="Template/assets/js/plugins/datepicker.js"></script>
 	<script type="text/javascript"
 		src="Template/assets/js/plugins/validation.js"></script>
+	<!-- Corey Made Files -->
+
 	<script type="text/javascript">
 		jQuery(document).ready(function() {
 			App.init();
 			Masking.initMasking();
 			Datepicker.initDatepicker();
 			Validation.initValidation();
+		
+			var ra = "${associate.arrivalDate}";
+			//arrivalDate becomes a string for some reason when it is called by JavaScript, so I need to make it a date again
+			//and account for annoying timezone stuff. 
+			var date = new Date(ra+"T05:00:00");  
+			//window.alert(ra);
+			//window.alert(date);
+			$("#date").datepicker("setDate", date);
 		});
 	</script>
 
