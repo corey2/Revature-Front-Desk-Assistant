@@ -145,9 +145,16 @@
 					<source>target/FrontDeskAssist.war</source>
 					<name>arbitrary</name>
 					-->
-					<adminurl>t3://172.31.27.47:7001/</adminurl>
-					
-					
+					<adminurl>t3://35.163.49.164:7001/</adminurl>
+					<user>clshaps93</user>
+					<password>coreyls93</password>
+					<upload>true</upload>
+					<targets>myserver</targets>
+					<action>deploy</action>
+					<remote>true</remote>
+					<verbose>true</verbose>
+					<source>target/FrontDeskAssist.war</source>
+					<name>arbitrary</name>
 				</configuration>
 				<executions>
 					<execution>
