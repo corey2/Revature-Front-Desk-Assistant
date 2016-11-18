@@ -155,6 +155,7 @@
 										}	
 									%>
 									</td>
+									<td>${associate["carDuringTraining"]}</td>
 									<td>
 									<% 
 										if (associate.getArrivalDate() != null) {
@@ -166,15 +167,7 @@
 									</td>
 									<td>${associate["methodOfTrans"]}</td>
 									<td>
-									<% 
-										int hc = associate.getCarDuringTraining();
-										if (hc == 0) {
-											out.println("No");
-										}
-										if (hc == 1) {
-											out.println("Yes");
-										}
-									%>
+									
 									</td>
 									<td>${associate["email"]}</td>
 									<td>

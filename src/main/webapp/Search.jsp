@@ -209,16 +209,6 @@
 				dateString = formatter.format(date);
 			}
 			
-			//Car during training?
-			String hasCar = "";
-			int hc = associate.getCarDuringTraining();
-			if (hc == 0) {
-				hasCar = "No";
-			}
-			if (hc == 1) {
-				hasCar = "Yes";
-			}
-			
 			//Phone Number
 			String phoneString = Long.toString(associate.getPhoneNumber());
 			String phoneDisplay = null;
@@ -257,7 +247,7 @@
 				+ "<td>" + zipString + "</td>"
 				+ "<td>" + dateString + "</td>"
 				+ "<td>" + associate.getMethodOfTrans() + "</td>"
-				+ "<td>" + hasCar + "</td>"
+				+ "<td>" + associate.getCarDuringTraining() + "</td>"
 				+ "<td>" + associate.getEmail() + "</td>"
 				+ "<td>" + phoneDisplay + "</td>"
 			);
