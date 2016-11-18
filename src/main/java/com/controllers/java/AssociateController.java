@@ -6,9 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,13 +14,14 @@ import javax.servlet.http.HttpServletResponse;
 import com.Dao.java.AssociateDAO;
 import com.pojos.java.AssociatePOJO;
 import com.pojos.java.Capitalizer;
+import com.pojos.java.EmailGenerator;
 
 @SuppressWarnings("serial")
 public class AssociateController extends HttpServlet {
 	private AssociateDAO dao;
 	private AssociatePOJO associate;
 	private RequestDispatcher view;
-	//private static String UPDATE_COMPLETE = "/UpdateComplete.jsp";
+	private static String UPDATE_COMPLETE = "/UpdateComplete.jsp";
 	private static String FORM = "/AssociateForm.jsp";
 
 	public AssociateController() {
@@ -67,8 +66,23 @@ public class AssociateController extends HttpServlet {
 		
 		dao.updateAssociate(associate);
 		
-		request.setAttribute("associate", associate);
-		view = request.getRequestDispatcher("/sendConfirmationEmail");
+		//String recipients = List of admin emails from the database
+		String recipient = "revaturefrontdeskassistant@gmail.com";
+		String subject = associate.getFirstName()+" "+associate.getLastName()+"'s information has been updated in the database";
+		String body = "The associate filled in the associate form to add/edit their personal information:"
+					//+"\n"+"Gender = "+associate.getSex()
+					//+"\n"+"Address = "+associate.getAddress()
+					//+"\n"+"City = "+associate.getCity()
+					//+"\n"+"State = "+associate.getState()
+					//+"\n"+"Zip Code = "+associate.getZip()
+					//+"\n"+"Arrival Date = "+associate.getArrivalDate()
+					//+"\n"+"Transportation Method = "+associate.getMethodOfTrans()
+					//+"\n"+"Has Car? = "+associate.getCarDuringTraining()
+					//+"\n"+"E-mail = "+associate.getEmail()
+					//+"\n"+"Phone Number = "+associate.getPhoneNumber()		
+		;		
+		EmailGenerator.run(recipient, subject, body);
+		view = request.getRequestDispatcher(UPDATE_COMPLETE);
         view.forward(request, response);
 	}
 }
