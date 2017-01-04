@@ -58,7 +58,7 @@
     		RequestDispatcher next = request.getRequestDispatcher("Error.jsp");
     		next.forward(request, response);
     	} 
-    %>
+%>
 
 </head>
 <body>
@@ -119,8 +119,6 @@
 						<button type="submit" name="submitSearch" value="Search"
 							class="btn btn-u rounded-3x btn-u-orange pulse-grow">Find
 							Associate</button>
-						<input type="hidden" name="crudMethod" value="add">
-						<!-- 	<li><input type="submit" value="Submit" /></li>  -->
 						&nbsp;
 						<button type="reset" name="reset" id="reset"
 							onclick="window.location.href='Search.jsp'" value="Reset Form"
@@ -135,10 +133,6 @@
 
 				</form>
 				<hr>
-
-
-
-
 
 				<!--Hover Rows-->
 				<div class="container">
@@ -176,7 +170,11 @@
 		if (request.getAttribute("associate") != null) {
 			Object unconverted = request.getAttribute("associate");
 			AssociatePOJO associate = (AssociatePOJO) unconverted;	
-
+			out.write("<p>style='color:red'>First name is"+associate.getFirstName()+"</p>");
+			if (associate.getFirstName() == null) {
+				out.write("<p>style='color:red'>That associate cannot be found in the database</p>");
+			}
+			
 			//sex
 			String sex = associate.getSex();
     		if (sex != null) {

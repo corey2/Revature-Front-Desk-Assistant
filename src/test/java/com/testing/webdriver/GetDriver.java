@@ -42,7 +42,8 @@ public class GetDriver {
 	}
 	
 	public static WebDriver getChrome() {
-		File file = new File("C://seleniumDrivers/chromedriver_win32/chromedriver.exe/");
+		File file = new File("C:/selenium-2.47.1/chromedriver.exe");
+		//File file = new File("C://seleniumDrivers/chromedriver_win32/chromedriver.exe/");
 		System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
 		return new ChromeDriver();
 	}
@@ -52,5 +53,5 @@ public class GetDriver {
 		System.setProperty("webdriver.gecko.driver", file.getAbsolutePath());
 		return new FirefoxDriver();
 	}
-
+	
 }

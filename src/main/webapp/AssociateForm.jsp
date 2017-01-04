@@ -189,6 +189,7 @@
 				<%AssociatePOJO associate = (AssociatePOJO) request.getAttribute("associate");%>
 				<form class="form-horizontal" method="POST" action="AssociateController" id="mainAssociateForm">
 					<fieldset>
+						
 						<div class="form-group">
 							<label>First Name</label>
 							<div class="row margin-bottom-20">
@@ -201,6 +202,7 @@
 								</div>
 							</div>
 						</div>
+						
 						<div class="form-group">
 							<label>Last Name</label>
 							<div class="row margin-bottom-20">
@@ -213,6 +215,7 @@
 								</div>
 							</div>
 						</div>
+						
 						<div class="form-group">
 							<label>Gender</label>
 							<div class="row margin-bottom-20">
@@ -234,6 +237,7 @@
 								</div>
 							</div>
 						</div>
+						
 						<div class="form-group">
 							<label>Email</label>
 							<div class="row margin-bottom-20">
@@ -244,6 +248,26 @@
 								</div>
 							</div>
 						</div>
+						
+						<div class="form-group">
+							<label>Phone Number</label>
+							<div class="row margin-bottom-20">
+								<div class="col-md-8 col-md-offset-0">
+									<input type="text" id="phoneNum" name="phoneNum"
+										class="form-control" onblur="validatePhone(value)" 
+										value=
+										"<% 
+											if (associate != null) {
+												if (associate.getPhoneNumber() != 0) {
+													out.println(associate.getPhoneNumber());
+												}
+											}
+										%>"
+										placeholder="Phone Enter: XXXXXXXXXX" required> <span id="phoneError"></span>
+								</div>
+							</div>
+						</div>
+						
 						<div class="form-group">
 							<label>Address</label>
 							<div class="row margin-bottom-20">
@@ -256,6 +280,7 @@
 								</div>
 							</div>
 						</div>
+						
 						<div class="form-group">
 							<label>City</label>
 							<div class="row margin-bottom-20">
@@ -267,17 +292,19 @@
 								</div>
 							</div>
 						</div>
+						
 						<div class="form-group">
 							<label>State</label>
 							<div class="row margin-bottom-20">
 								<div class="col-md-8 col-md-offset-0">
 									<input type="text" id="state" name="state" class="form-control"
-										data-val="true" value="${associate.state}" placeholder="State"
+										data-val="true" value="${associate.state}" placeholder="State: XX"
 										required> <span class="field-validation-valid"
 										data-valmsg-for="subject" data-valmsg-replace="true"></span>
 								</div>
 							</div>
 						</div>
+						
 						<div class="form-group">
 							<label>Zip Code</label>
 							<div class="row margin-bottom-20">
@@ -297,24 +324,18 @@
 								</div>
 							</div>
 						</div>
+						
 						<div class="form-group">
-							<label>Phone Number</label>
-							<div class="row margin-bottom-20">
-								<div class="col-md-8 col-md-offset-0">
-									<input type="text" id="phoneNum" name="phoneNum"
-										class="form-control" onblur="validatePhone(value)" 
-										value=
-										"<% 
-											if (associate != null) {
-												if (associate.getPhoneNumber() != 0) {
-													out.println(associate.getPhoneNumber());
-												}
-											}
-										%>"
-										placeholder="Phone Enter: XXXXXXXXXX" required> <span id="phoneError"></span>
-								</div>
-							</div>
+							<fieldset>
+							<label>Choose the date you are arriving.</label>
+								<section> <label class="label">Date
+									of Arrival.</label> <label class="input"> <i
+									class="icon-append fa fa-calendar"></i> <input type="text"
+									name="date" id="date">
+								</label> </section>
+							</fieldset>
 						</div>
+						
 						<div class="form-group">
 							<label>How will you be traveling to Revature?</label>
 							<div class="row margin-bottom-20">
@@ -348,6 +369,7 @@
 								</div>
 							</div>
 						</div>
+						
 						<div class="form-group">
 							<label>Will you be using a car during Revature training?</label>
 							<div class="row margin-bottom-20">
@@ -368,16 +390,8 @@
 									</c:choose>
 								</div>
 							</div>
-						</div>
-						<div class="form-group">
-							<fieldset>
-								<section> <label class="label">Choose the date
-									you are arriving.</label> <label class="input"> <i
-									class="icon-append fa fa-calendar"></i> <input type="text"
-									name="date" id="date">
-								</label> </section>
-							</fieldset>
 						</div>	  
+						
 						<p>
 							<button type="submit" name="update"
 								class="btn btn-u rounded-3x btn-u-orange pulse-grow">Update Info</button>

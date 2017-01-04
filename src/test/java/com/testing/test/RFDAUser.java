@@ -1,4 +1,4 @@
-/*package com.testing.test;
+package com.testing.test;
 
 import org.testng.annotations.Test;
 import com.testing.pageobjects.*;
@@ -129,11 +129,10 @@ public class RFDAUser {
 
 	@BeforeClass
 	public void beforeClass() {
-		// using the chromeDriver
 		prop = GetDriver.getProperties();
-		driver = GetDriver.getFirefox();
-		// retrieve the url from properties file location.properties
-		driver.get(prop.getProperty("url"));
+		driver = GetDriver.getChrome();
+		//driver = GetDriver.getFirefox();
+		driver.get(prop.getProperty("url"));  // retrieve the url from properties file location.properties
 	}
 
 	@AfterClass
@@ -156,4 +155,4 @@ public class RFDAUser {
 	@AfterSuite
 	public void afterSuite() {
 	}
-}*/
+}

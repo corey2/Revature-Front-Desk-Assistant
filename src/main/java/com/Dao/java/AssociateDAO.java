@@ -19,34 +19,34 @@ public class AssociateDAO {
 	public void updateAssociate(AssociatePOJO associate){
         try {
             PreparedStatement preparedStatement = connection
-                    .prepareStatement("update associate set firstname=?, lastname=?, sex=?, address=?," +
-                            		  "city=?, state=?, zip=?, arrivalDate=?, methodOfTrans=?," +
-                    		          "carDuringTraining=?, email=?, phoneNumber=? where username=?");
+                    .prepareStatement("update associate set firstname=?, lastname=?, sex=?, email=?, phoneNumber=?, address=?, " +
+                            		  "city=?, state=?, zip=?, arrivalDate=?, methodOfTrans=?, carDuringTraining=? where username=?");
+                    
             preparedStatement.setString(1, associate.getFirstName());
             preparedStatement.setString(2, associate.getLastName());
             preparedStatement.setString(3, associate.getSex());
-            preparedStatement.setString(4, associate.getAddress());
-            preparedStatement.setString(5, associate.getCity());
-            preparedStatement.setString(6, associate.getState());
-            preparedStatement.setInt(7, associate.getZip());
+            preparedStatement.setString(4, associate.getEmail());
+            preparedStatement.setLong(5, associate.getPhoneNumber());
+            preparedStatement.setString(6, associate.getAddress());
+            preparedStatement.setString(7, associate.getCity());
+            preparedStatement.setString(8, associate.getState());
+            preparedStatement.setInt(9, associate.getZip());
             
             java.util.Date utilDate = associate.getArrivalDate();
             
             if(utilDate != null){
                 java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());     
-                preparedStatement.setDate(8, sqlDate);
+                preparedStatement.setDate(10, sqlDate);
             }
             else{
-            	preparedStatement.setDate(8, null);
+            	preparedStatement.setDate(10, null);
             }
             
-            preparedStatement.setString(9, associate.getMethodOfTrans());
-            preparedStatement.setString(10, associate.getCarDuringTraining());
-            preparedStatement.setString(11, associate.getEmail());
-            preparedStatement.setLong(12, associate.getPhoneNumber());
+            preparedStatement.setString(11, associate.getMethodOfTrans());
+            preparedStatement.setString(12, associate.getCarDuringTraining());
             preparedStatement.setString(13, associate.getUsername());         
             preparedStatement.execute();
-
+            
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -67,6 +67,7 @@ public class AssociateDAO {
 			e.printStackTrace();
 		}
         return associate;
+        
     }
 	
 	public AssociatePOJO getAssociateByFullName(String firstName, String lastName) {
@@ -111,6 +112,8 @@ public class AssociateDAO {
 		associate.setFirstName(rs.getString("firstname"));
 		associate.setLastName(rs.getString("lastname"));
 		associate.setSex(rs.getString("sex"));
+		associate.setEmail(rs.getString("email"));
+	    associate.setPhoneNumber(rs.getLong("phoneNumber"));
 		associate.setAddress(rs.getString("address"));
 		associate.setCity(rs.getString("city"));
 	    associate.setState(rs.getString("state"));
@@ -118,8 +121,6 @@ public class AssociateDAO {
 	    associate.setArrivalDate(rs.getDate("arrivalDate"));
 	    associate.setMethodOfTrans(rs.getString("methodOfTrans"));
 	    associate.setCarDuringTraining(rs.getString("carDuringTraining"));
-	    associate.setEmail(rs.getString("email"));
-	    associate.setPhoneNumber(rs.getLong("phoneNumber"));
     	return associate;
     }
     

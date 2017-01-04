@@ -92,6 +92,7 @@ public class AdminController extends HttpServlet {
     		String fntrim = fn.trim();
     		String lntrim = ln.trim();
     		associate = dao.getAssociateByFullName(fntrim, lntrim);
+    		System.out.println(associate.getFirstName());
     		request.setAttribute("associate", associate);
     		view = request.getRequestDispatcher(SEARCH_ASSOCIATE);
     	}

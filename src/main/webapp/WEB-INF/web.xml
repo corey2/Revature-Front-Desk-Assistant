@@ -48,15 +48,6 @@
 		<servlet-name>Send Login Credentials</servlet-name>
 		<url-pattern>/sendLoginEmail</url-pattern>
 	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>Send Confirmation</servlet-name>
-		<servlet-class>com.controllers.java.SubmissionEmailController</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>Send Confirmation</servlet-name>
-		<url-pattern>/sendConfirmationEmail</url-pattern>
-	</servlet-mapping>
 	
 	<servlet>
 		<servlet-name>Password Servlet</servlet-name>

@@ -51,7 +51,6 @@
     		next.forward(request, response);
     	} 
     	int userNumber = (int) application.getAttribute("userRole");
-    	System.out.println("User role in admin page = "+userNumber);
     	if (userNumber != 2) {
     		RequestDispatcher next = request.getRequestDispatcher("Error.jsp");
     		next.forward(request, response);
@@ -103,6 +102,8 @@
 								<th>First Name</th> 
 								<th>Last Name</th> 
 								<th>Gender</th>
+								<th>Email</th>
+								<th>Phone</th>
 								<th>Address</th>
 								<th>City</th>
 								<th>State</th>
@@ -110,9 +111,6 @@
 								<th>Arrival Date</th>
 								<th>Transport</th>
 								<th>Has Car?</th>
-								<th>Email</th>
-								<th>Phone</th>
-								<th>Updates</th>
 							</tr>
 						</thead>
 
@@ -140,35 +138,6 @@
 							    		}
 									%>
 									</td>
-									<td>${associate["address"]}</td>
-									<td>${associate["city"]}</td>
-									<td>${associate["state"]}</td>
-									<td>
-									<% 
-										String zipString = Integer.toString(associate.getZip());
-										if (associate.getZip() == 0) {
-											out.println();
-										} else if (zipString.length() != 5) {					
-											out.println("Zip error: "+associate.getZip());
-										} else {
-											out.println(associate.getZip());
-										}	
-									%>
-									</td>
-									<td>${associate["carDuringTraining"]}</td>
-									<td>
-									<% 
-										if (associate.getArrivalDate() != null) {
-											Date date = associate.getArrivalDate();
-											SimpleDateFormat formatter = new SimpleDateFormat("MM-dd-yyyy");
-											out.println(formatter.format(date));
-										}
-									%>
-									</td>
-									<td>${associate["methodOfTrans"]}</td>
-									<td>
-									
-									</td>
 									<td>${associate["email"]}</td>
 									<td>
 									<% 
@@ -185,6 +154,34 @@
 										}
 									%>
 									</td>
+									<td>${associate["address"]}</td>
+									<td>${associate["city"]}</td>
+									<td>${associate["state"]}</td>
+									<td>
+									<% 
+										String zipString = Integer.toString(associate.getZip());
+										if (associate.getZip() == 0) {
+											out.println();
+										} else if (zipString.length() != 5) {					
+											out.println("Zip error: "+associate.getZip());
+										} else {
+											out.println(associate.getZip());
+										}	
+									%>
+									</td>
+									<td>
+									<% 
+										if (associate.getArrivalDate() != null) {
+											Date date = associate.getArrivalDate();
+											SimpleDateFormat formatter = new SimpleDateFormat("MM-dd-yyyy");
+											out.println(formatter.format(date));
+										}
+									%>
+									</td>
+									<td>${associate["methodOfTrans"]}</td>
+									<td>${associate["carDuringTraining"]}</td>
+									
+									
 
 									<c:url value="/AdminController" var="updateURL">
 										<c:param name="behavior" value="update" />
@@ -203,6 +200,7 @@
 									<td>
 										<div>
 											<a href="${updateURL}">Update</a>
+											|
 											<a href="${deleteURL}">Delete</a>
 										</div>
 									</td>

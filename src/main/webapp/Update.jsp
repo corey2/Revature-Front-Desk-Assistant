@@ -202,19 +202,20 @@
 				<%AssociatePOJO associate = (AssociatePOJO) request.getAttribute("associate");%>
 				<form class="form-horizontal" action="AdminController" method="POST" id="adminUpdateForm">
 					<fieldset>
-					<div class="form-group">
-							<label>User Name</label>
+						<div class="form-group">
+							<label>Username</label>
 							<div class="row margin-bottom-20">
 								<div class="col-md-8 col-md-offset-0">
 									<input type="text" id="associateUN" name="associateUN"
 										class="form-control" data-val="true" value="${associate.username}"
-										placeholder="User Name"
+										placeholder="Username"
 										required> <span class="field-validation-valid"
 										data-valmsg-for="username" data-valmsg-replace="true"></span>
 
 								</div>
 							</div>
 						</div>
+						
 						<div class="form-group">
 							<label>First Name</label>
 							<div class="row margin-bottom-20">
@@ -224,10 +225,10 @@
 										placeholder="First Name"
 										required> <span class="field-validation-valid"
 										data-valmsg-for="firstName" data-valmsg-replace="true"></span>
-
 								</div>
 							</div>
 						</div>
+						
 						<div class="form-group">
 							<label>Last Name</label>
 							<div class="row margin-bottom-20">
@@ -237,10 +238,10 @@
 										placeholder="Last Name"
 										required> <span class="field-validation-valid"
 										data-valmsg-for="lastName" data-valmsg-replace="true"></span>
-
 								</div>
 							</div>
 						</div>
+						
 						<div class="form-group">
 							<label>Gender</label>
 							<div class="row margin-bottom-20">
@@ -275,62 +276,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="form-group">
-							<label>Address</label>
-							<div class="row margin-bottom-20">
-								<div class="col-md-8 col-md-offset-0">
-									<input type="text" id="address" name="address"
-										class="form-control" data-val="true" value="${associate.address}"
-										placeholder="Address"
-										required> <span class="field-validation-valid"
-										data-valmsg-for="subject" data-valmsg-replace="true"></span>
-								</div>
-							</div>
-						</div>
-						<div class="form-group">
-							<label>City</label>
-							<div class="row margin-bottom-20">
-								<div class="col-md-8 col-md-offset-0">
-									<input type="text" id="city" name="city" class="form-control"
-										data-val="true" value="${associate.city}"
-										placeholder="City" required> <span
-										class="field-validation-valid" data-valmsg-for="subject"
-										data-valmsg-replace="true"></span>
-
-								</div>
-							</div>
-						</div>
-						<div class="form-group">
-							<label>State</label>
-							<div class="row margin-bottom-20">
-								<div class="col-md-8 col-md-offset-0">
-									<input type="text" id="state" name="state" class="form-control"
-										data-val="true" value="${associate.state}"
-										placeholder="State" required> <span
-										class="field-validation-valid" data-valmsg-for="subject"
-										data-valmsg-replace="true"></span>
-
-								</div>
-							</div>
-						</div>
-						<div class="form-group">
-							<label>Zip Code</label>
-							<div class="row margin-bottom-20">
-								<div class="col-md-8 col-md-offset-0">
-									<input type="text" id="zip" name="zip" class="form-control"
-										onblur="validateZip(value)"
-										value=
-									    "<%
-											if (associate != null) {
-												if (associate.getZip() != 0) {
-													out.println(associate.getZip());
-												}
-											}
-										%>"
-										placeholder="Zip" required> <span id="zipError"></span>										
-								</div>
-							</div>
-						</div>
+						
 						<div class="form-group">
 							<label>Phone Number</label>
 							<div class="row margin-bottom-20">
@@ -349,7 +295,77 @@
 								</div>
 							</div>
 						</div>
+						
+						<div class="form-group">
+							<label>Address</label>
+							<div class="row margin-bottom-20">
+								<div class="col-md-8 col-md-offset-0">
+									<input type="text" id="address" name="address"
+										class="form-control" data-val="true" value="${associate.address}"
+										placeholder="Address"
+										required> <span class="field-validation-valid"
+										data-valmsg-for="subject" data-valmsg-replace="true"></span>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label>City</label>
+							<div class="row margin-bottom-20">
+								<div class="col-md-8 col-md-offset-0">
+									<input type="text" id="city" name="city" class="form-control"
+										data-val="true" value="${associate.city}"
+										placeholder="City" required> <span
+										class="field-validation-valid" data-valmsg-for="subject"
+										data-valmsg-replace="true"></span>
 
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label>State</label>
+							<div class="row margin-bottom-20">
+								<div class="col-md-8 col-md-offset-0">
+									<input type="text" id="state" name="state" class="form-control"
+										data-val="true" value="${associate.state}"
+										placeholder="State: XX" required> <span
+										class="field-validation-valid" data-valmsg-for="subject"
+										data-valmsg-replace="true"></span>
+
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label>Zip Code</label>
+							<div class="row margin-bottom-20">
+								<div class="col-md-8 col-md-offset-0">
+									<input type="text" id="zip" name="zip" class="form-control"
+										onblur="validateZip(value)"
+										value=
+									    "<%
+											if (associate != null) {
+												if (associate.getZip() != 0) {
+													out.println(associate.getZip());
+												}
+											}
+										%>"
+										placeholder="Zip" required> <span id="zipError"></span>										
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<fieldset>
+							<label>Select the date the associate is arriving.</label>
+								<section> <label class="label">Date
+									of Arrival.</label> <label class="input"> <i
+									class="icon-append fa fa-calendar"></i> <input type="text"
+									name="date" id="date">
+								</label> </section>
+							</fieldset>
+						</div>
 
 						<div class="form-group">
 							<label>How will the associate be traveling to Revature?</label>
@@ -384,6 +400,7 @@
 								</div>
 							</div>
 						</div>
+						
 						<div class="form-group">
 							<label>Will the associate be using a car during Revature training?</label>
 							<div class="row margin-bottom-20">
@@ -404,17 +421,6 @@
 									</c:choose>
 								</div>
 							</div>
-						</div>
-
-						<div class="form-group">
-							<fieldset>
-							<label>Select the date the associate is arriving.</label>
-								<section> <label class="label">Date
-									of Arrival.</label> <label class="input"> <i
-									class="icon-append fa fa-calendar"></i> <input type="text"
-									name="date" id="date">
-								</label> </section>
-							</fieldset>
 						</div>
 						
 						<input type="hidden" name="crudMethod" value="update">

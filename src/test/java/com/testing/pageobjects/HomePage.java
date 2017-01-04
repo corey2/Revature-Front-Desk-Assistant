@@ -8,8 +8,8 @@ import org.openqa.selenium.WebDriver;
 public class HomePage {
 
 	public static void homeLogin(WebDriver driver, Properties prop) {
-		String homelogin = prop.getProperty("homelogin");
-		driver.findElement(By.name(homelogin)).click();
+		String homeLogin = prop.getProperty("homeLogin");
+		driver.findElement(By.name(homeLogin)).click();
 		//driver.findElement(By.xpath(homelogin)).click();
 	}
 	
@@ -23,9 +23,11 @@ public class HomePage {
 		String pageTitle = prop.getProperty("loginPg");
 		
 		if(gTitle.matches(pageTitle)){
-			System.out.println("Navigate to Login Page successful!");
+			System.out.println("Navigation to Login Page successful!");
 		} else {
 			System.out.println("Unable to navigate to Login Page...");
 		}
+		
+		LoginAdminPage.returnHome(driver, prop);   //Question 1
 	}
 }

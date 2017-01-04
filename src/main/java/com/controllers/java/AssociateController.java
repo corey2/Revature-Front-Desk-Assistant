@@ -44,25 +44,25 @@ public class AssociateController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 	throws ServletException, IOException {
 		associate = new AssociatePOJO();
-		associate.setUsername((String) this.getServletContext().getAttribute("username"));
+		String username = (String) this.getServletContext().getAttribute("username");
+		associate.setUsername(username);
 		associate.setFirstName(Capitalizer.use(request.getParameter("firstName")));
 		associate.setLastName(Capitalizer.use(request.getParameter("lastName")));
-		associate.setEmail(request.getParameter("email"));
 		associate.setSex(request.getParameter("sex"));
+		associate.setEmail(request.getParameter("email"));
+		associate.setPhoneNumber(Long.parseLong(request.getParameter("phoneNum")));
 		associate.setAddress(request.getParameter("address"));
 		associate.setCity(request.getParameter("city"));
 		associate.setState(request.getParameter("state"));
 		associate.setZip(Integer.parseInt(request.getParameter("zip")));
-		associate.setPhoneNumber(Long.parseLong(request.getParameter("phoneNum")));
-		associate.setMethodOfTrans(request.getParameter("methTrans"));
-		associate.setCarDuringTraining(request.getParameter("hasCar"));
-		
 		try {
 			Date dob = new SimpleDateFormat("MM.dd.yyyy").parse(request.getParameter("date"));
 			associate.setArrivalDate(dob);
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
+		associate.setMethodOfTrans(request.getParameter("methTrans"));
+		associate.setCarDuringTraining(request.getParameter("hasCar"));
 		
 		dao.updateAssociate(associate);
 		

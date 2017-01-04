@@ -27,8 +27,8 @@ public class LoginAdminPage {
 	public static void verifyLogin (WebDriver driver, Properties prop) {
 		String gTitle = driver.getTitle();
 		String pageTitle = prop.getProperty("adminPg");
-		System.out.println("LoginAdminPage::gTitle= " + gTitle);
-		System.out.println("LoginAdminPage::pageTitle= " + pageTitle);
+		//System.out.println("LoginAdminPage::gTitle= " + gTitle);
+		//System.out.println("LoginAdminPage::pageTitle= " + pageTitle);
 		if(gTitle.matches(pageTitle)){
 			System.out.println("Login Admin successful!");
 		} else {

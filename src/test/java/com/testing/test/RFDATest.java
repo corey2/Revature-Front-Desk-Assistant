@@ -1,4 +1,4 @@
-/*package com.testing.test;
+package com.testing.test;
 
 import org.testng.annotations.Test;
 
@@ -29,7 +29,7 @@ public class RFDATest {
 	@Test(priority=0)
 	public void loginHome() throws InterruptedException {
 		Thread.sleep(800);
-		HomePage.homeLoginNB(driver, prop);
+		HomePage.homeLogin(driver, prop);
 		HomePage.verifyLogin(driver, prop);
 		//driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	}
@@ -46,6 +46,8 @@ public class RFDATest {
 	
 	@Test(priority=1)
 	public void loginAdmin() throws InterruptedException {	
+		Thread.sleep(2000);
+		HomePage.homeLogin(driver, prop);  //Question 2
 		Thread.sleep(2000);
 		LoginAdminPage.inputUsername(driver, prop);
 		LoginAdminPage.inputPassword(driver, prop);
@@ -158,11 +160,10 @@ public class RFDATest {
   
   @BeforeClass
   public void beforeClass() {
-	  // using the chromeDriver
 	  prop = GetDriver.getProperties();
-	  driver = GetDriver.getFirefox();
-	  // retrieve the url from properties file location.properties
-	  driver.get(prop.getProperty("url"));	  
+	  driver = GetDriver.getChrome();
+	  //driver = GetDriver.getFirefox();
+	  driver.get(prop.getProperty("url"));	   //retrieve the url from properties file location.properties
   }
 
   @AfterClass
@@ -187,4 +188,4 @@ public class RFDATest {
   public void afterSuite() {
   }
 
-}*/
+}
