@@ -2,7 +2,7 @@ package com.testing.test;
 
 import org.testng.annotations.Test;
 
-import com.testing.pageobjects.LoginAdminPage;
+import com.testing.pageobjects.LoginPage;
 import com.testing.pageobjects.*;
 import com.testing.webdriver.*;
 
@@ -15,6 +15,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.AfterTest;
@@ -27,42 +28,44 @@ public class RFDATest {
 	private Properties prop = null;
 	
 	@Test(priority=0)
-	public void loginHome() throws InterruptedException {
-		Thread.sleep(800);
-		HomePage.homeLogin(driver, prop);
-		HomePage.verifyLogin(driver, prop);
+	public void homeTest() throws InterruptedException {  //Tests all three buttons on the home page.
+		HomePage homepage = new HomePage(driver);
+		Thread.sleep(1000);
+		homepage.homeLogin();
+		Assert.assertEquals(driver.getTitle(), prop.getProperty("loginPg"));
+		driver.navigate().back();
+		Thread.sleep(1000);
+		homepage.homeLoginNB();
+		Assert.assertEquals(driver.getTitle(), prop.getProperty("loginPg"));
+		driver.navigate().back();
+		Thread.sleep(1000);
+		homepage.homeLoginRevature();
+		Assert.assertEquals(driver.getTitle(), prop.getProperty("loginPg"));
+		//driver.navigate().back();
+		Thread.sleep(1000);
+		//Thread.sleep(800);
 		//driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	}
 	
 	
-	@Test(priority=0)
-	public void loginAdminNavBar() throws InterruptedException {
-		Thread.sleep(3000);
-		HomePage.homeLoginNB(driver, prop);
-		HomePage.verifyLogin(driver, prop);
-	}
-	
-	
-	
 	@Test(priority=1)
-	public void loginAdmin() throws InterruptedException {	
-		Thread.sleep(2000);
-		HomePage.homeLogin(driver, prop);  //Question 2
-		Thread.sleep(2000);
-		LoginAdminPage.inputUsername(driver, prop);
-		LoginAdminPage.inputPassword(driver, prop);
-		Thread.sleep(2000);
-		LoginAdminPage.login(driver, prop);
-		Thread.sleep(2000);
-		LoginAdminPage.verifyLogin(driver, prop);	
-		LoginAdminPage.returnHome(driver, prop);
+	public void loginAdminTest() throws InterruptedException {	
+		LoginPage loginpage = new LoginPage(driver);
+		Thread.sleep(1000);
+		loginpage.inputUsername("usernameField", "adminUsername");
+		loginpage.inputPassword("passwordField", "adminPassword");
+		Thread.sleep(1000);
+		loginpage.login("login");
+		Thread.sleep(1000);
+		Assert.assertEquals(driver.getTitle(), prop.getProperty("adminPg"));	
 	}
 	
+	/*
 	@Test(priority=2)
 	public void adminDashboard() throws InterruptedException {
 		Thread.sleep(2000);
 		AdminDashPage.enterAdminDashbd(driver, prop);
-		AdminDashPage.verifyLogin(driver, prop);
+		AdminDashPage.verifyNavigation(driver, prop);
 		Thread.sleep(2000);
 		AdminDashPage.returnHome(driver, prop);
 	}
@@ -110,8 +113,8 @@ public class RFDATest {
 		AddAssociate.logOutSuccess(driver, prop);
 		//Log back in
 		Thread.sleep(3000);
-		HomePage.homeLoginNB(driver, prop);
-		HomePage.verifyLogin(driver, prop);
+		//HomePage.homeLoginNB(driver, prop);
+		//HomePage.verifyLogin(driver, prop);
 		//log in as admin
 		Thread.sleep(2000);
 		LoginAdminPage.inputUsername(driver, prop);
@@ -120,7 +123,7 @@ public class RFDATest {
 		LoginAdminPage.login(driver, prop);
 		Thread.sleep(2000);
 		LoginAdminPage.verifyLogin(driver, prop);	
-		LoginAdminPage.returnHome(driver, prop);
+		//HomePage.returnHome(driver, prop);
 	}
 	
 	@Test(priority=5)
@@ -139,7 +142,7 @@ public class RFDATest {
 		Thread.sleep(1000);
 		SearchAssociate.searchLogOut(driver, prop);
 	}
-	
+	*/
 	 
 	
   @BeforeMethod
@@ -160,9 +163,9 @@ public class RFDATest {
   
   @BeforeClass
   public void beforeClass() {
-	  prop = GetDriver.getProperties();
 	  driver = GetDriver.getChrome();
 	  //driver = GetDriver.getFirefox();
+	  prop = GetDriver.getProperties();
 	  driver.get(prop.getProperty("url"));	   //retrieve the url from properties file location.properties
   }
 
@@ -177,7 +180,6 @@ public class RFDATest {
 
   @AfterTest
   public void afterTest() {
-	  driver.close();
   }
 
   @BeforeSuite

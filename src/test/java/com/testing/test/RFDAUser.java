@@ -1,3 +1,4 @@
+/*
 package com.testing.test;
 
 import org.testng.annotations.Test;
@@ -26,8 +27,8 @@ public class RFDAUser {
 	@Test(priority = 0)
 	public void loginAdminNavBar() throws InterruptedException {
 		Thread.sleep(600);
-		HomePage.homeLoginNB(driver, prop);
-		HomePage.verifyLogin(driver, prop);
+		//HomePage.homeLoginNB(driver, prop);
+		//HomePage.verifyLogin(driver, prop);
 	}
 
 	@Test(priority = 1)
@@ -156,3 +157,4 @@ public class RFDAUser {
 	public void afterSuite() {
 	}
 }
+*/

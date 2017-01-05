@@ -13,14 +13,14 @@ public class AdminDashPage {
 		driver.findElement(By.id(adminDashboard)).click();
 	}
 	
-	public static void verifyLogin (WebDriver driver, Properties prop) {
+	public static void verifyNavigation (WebDriver driver, Properties prop) {
 		String gTitle = driver.getTitle();
 		String pageTitle = prop.getProperty("adminDashbdPg");
 		
 		if(gTitle.matches(pageTitle)){
-			System.out.println("Login to Admin Dashboard successful!");
+			System.out.println("Navigation to Admin Dashboard successful!");
 		} else {
-			System.out.println("Unable to log into Admin Dashboard...");
+			System.out.println("Unable to navigate to Admin Dashboard...");
 		}
 	}
 	
