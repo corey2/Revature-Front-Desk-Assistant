@@ -9,34 +9,34 @@ public class AdminPage extends RFDAWebPage {
 		super(driver);
 	}
 
-	public void enterDashbd(String adminDB) {
-		String adminDashboard = location.getProperty(adminDB);
+	public void enterDashbd(String key) {
+		String element = location.getProperty(key);
 		//System.out.println("enter admindashbd = " + adminDashboard);
-		driver.findElement(By.name(adminDashboard)).click();
+		driver.findElement(By.name(element)).click();
 	}
 	
-	public void enterSearch(String searchKey) {
-		String search = location.getProperty(searchKey);
-		driver.findElement(By.name(search)).click();
+	public void enterSearch(String key) {
+		String element = location.getProperty(key);
+		driver.findElement(By.name(element)).click();
 	}
 	
-	public void enterCreate(String searchKey) {
-		String search = location.getProperty(searchKey);
-		driver.findElement(By.name(search)).click();
+	public void enterCreate(String key) {
+		String element = location.getProperty(key);
+		driver.findElement(By.name(element)).click();
 	}
 	
-	public void enterUpdate(String searchKey) {
-		String search = location.getProperty(searchKey);
-		driver.findElement(By.name(search)).click();
+	public void enterUpdate(String key) {
+		String element = location.getProperty(key);
+		driver.findElement(By.name(element)).click();
 	}
 	
-	public void enterDelete(String searchKey) {
-		String search = location.getProperty(searchKey);
-		driver.findElement(By.name(search)).click();
+	public void enterDelete(String key) {
+		String element = location.getProperty(key);
+		driver.findElement(By.name(element)).click();
 	}
 	
-	public void enterChangePassword(String searchKey) {
-		String search = location.getProperty(searchKey);
-		driver.findElement(By.name(search)).click();
+	public void enterChangePassword(String key) {
+		String element = location.getProperty(key);
+		driver.findElement(By.name(element)).click();
 	}
 }

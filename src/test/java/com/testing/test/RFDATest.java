@@ -63,7 +63,21 @@ public class RFDATest {
 		Assert.assertEquals(driver.getTitle(), location.getProperty("dashPg"));
 		driver.navigate().back();
 		adminpage.enterSearch("search");
+		Assert.assertEquals(driver.getTitle(), location.getProperty("searchPg"));
+		driver.navigate().back();
+		adminpage.enterCreate("create");
+		Assert.assertEquals(driver.getTitle(), location.getProperty("createPg"));
+		driver.navigate().back();
+		adminpage.enterUpdate("update");
+		Assert.assertEquals(driver.getTitle(), location.getProperty("updatePg"));
+		driver.navigate().back();
+		adminpage.enterChangePassword("changePassword");
+		Assert.assertEquals(driver.getTitle(), location.getProperty("changePasswordPg"));
+		driver.navigate().back();
 		
+	
+	
+	
 	}
 	
 	/*

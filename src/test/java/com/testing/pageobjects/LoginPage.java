@@ -9,21 +9,21 @@ public class LoginPage extends RFDAWebPage {
 		super(driver);
 	}
 
-	public void inputUsername(String unFieldKey, String unInputKey) {
-		String unField = location.getProperty(unFieldKey);
-		String unInput= input.getProperty(unInputKey);		 
-		driver.findElement(By.id(unField)).sendKeys(unInput);
+	public void inputUsername(String elementKey, String dataKey) {
+		String element = location.getProperty(elementKey);
+		String data = input.getProperty(dataKey);		 
+		driver.findElement(By.id(element)).sendKeys(data);
 	}
 	
-	public void inputPassword(String pwFieldKey, String pwInputKey) {
-		String pwField = location.getProperty(pwFieldKey);
-		String pwInput = input.getProperty(pwInputKey);
-		driver.findElement(By.id(pwField)).sendKeys(pwInput);
+	public void inputPassword(String elementKey, String dataKey) {
+		String element = location.getProperty(elementKey);
+		String data = input.getProperty(dataKey);
+		driver.findElement(By.id(element)).sendKeys(data);
 	}
 	
-	public void login(String loginFieldKey) {
-		String loginField = location.getProperty(loginFieldKey);
-		driver.findElement(By.name(loginField)).click();
+	public void login(String key) {
+		String element = location.getProperty(key);
+		driver.findElement(By.name(element)).click();
 	}
 	
 }
