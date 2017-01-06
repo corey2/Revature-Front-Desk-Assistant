@@ -10,19 +10,19 @@ public class LoginPage extends RFDAWebPage {
 	}
 
 	public void inputUsername(String unFieldKey, String unInputKey) {
-		String unField = prop.getProperty(unFieldKey);
-		String unInput= prop.getProperty(unInputKey);		 
+		String unField = location.getProperty(unFieldKey);
+		String unInput= input.getProperty(unInputKey);		 
 		driver.findElement(By.id(unField)).sendKeys(unInput);
 	}
 	
 	public void inputPassword(String pwFieldKey, String pwInputKey) {
-		String pwField = prop.getProperty(pwFieldKey);
-		String pwInput = prop.getProperty(pwInputKey);
+		String pwField = location.getProperty(pwFieldKey);
+		String pwInput = input.getProperty(pwInputKey);
 		driver.findElement(By.id(pwField)).sendKeys(pwInput);
 	}
 	
 	public void login(String loginFieldKey) {
-		String loginField = prop.getProperty(loginFieldKey);
+		String loginField = location.getProperty(loginFieldKey);
 		driver.findElement(By.name(loginField)).click();
 	}
 	

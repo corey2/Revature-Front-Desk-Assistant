@@ -12,14 +12,14 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class GetDriver {
 	
-	public static Properties getProperties() {
+	public static Properties getProperties(String fileName) {
 		Properties prop = null;
 		File file = null;
 		FileInputStream fis = null;
 		
 		try {
 			prop = new Properties();
-			file = new File("location.properties");
+			file = new File(fileName);
 			fis = new FileInputStream(file);
 			prop.load(fis);
 			

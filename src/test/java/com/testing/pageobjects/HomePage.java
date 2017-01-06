@@ -11,19 +11,19 @@ public class HomePage extends RFDAWebPage {
 	}
 
 	public void homeLogin() {
-		String homeLogin = prop.getProperty("homeLogin");
+		String homeLogin = location.getProperty("homeLogin");
 		driver.findElement(By.name(homeLogin)).click();
 		
 		//driver.findElement(By.xpath(homelogin)).click();
 	}
 	
 	public void homeLoginNB() {
-		String homeLoginNB = prop.getProperty("homeLoginNB");
+		String homeLoginNB = location.getProperty("homeLoginNB");
 		driver.findElement(By.id(homeLoginNB)).click();
 	}
 	
 	public void homeLoginRevature() {
-		String homeLoginRevature = prop.getProperty("homeLoginRevature");
+		String homeLoginRevature = location.getProperty("homeLoginRevature");
 		driver.findElement(By.cssSelector("[href=\""+homeLoginRevature+"\"]")).click();
 	}
 

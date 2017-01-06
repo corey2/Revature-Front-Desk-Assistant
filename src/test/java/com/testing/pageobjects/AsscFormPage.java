@@ -8,81 +8,85 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class AsscFormPage {
+public class AsscFormPage extends RFDAWebPage {
 
-	public static void getAssocForm(WebDriver driver, Properties prop) {
-		String asscForm = prop.getProperty("assocForm");
+	public AsscFormPage(WebDriver driver) {
+		super(driver);
+	}
+
+	public void getAssocForm() {
+		String asscForm = location.getProperty("assocForm");
 		driver.findElement(By.id(asscForm)).click();
 	}
 	
-	public static void firstName(WebDriver driver, Properties prop) {
-		String fname = prop.getProperty("fname");
-		String fnameField = prop.getProperty("fnameField");
+	public void firstName() {
+		String fname = location.getProperty("fname");
+		String fnameField = location.getProperty("fnameField");
 		driver.findElement(By.name(fnameField)).clear();
 		driver.findElement(By.name(fnameField)).sendKeys(fname);
 	}
 	
-	public static void lastName(WebDriver driver, Properties prop) {
-		String lname = prop.getProperty("lname");
-		String lnameField = prop.getProperty("lnameField");
+	public void lastName() {
+		String lname = location.getProperty("lname");
+		String lnameField = location.getProperty("lnameField");
 		driver.findElement(By.name(lnameField)).clear();
 		driver.findElement(By.name(lnameField)).sendKeys(lname);
 	}
 	
-	public static void updateGender(WebDriver driver, Properties prop) {	
-		String gender = prop.getProperty("assocGender");
+	public void updateGender() {	
+		String gender = location.getProperty("assocGender");
 		driver.findElement(By.xpath(gender)).click();
 	}
 	
-	public static void email(WebDriver driver, Properties prop) {
-		String email = prop.getProperty("email");
-		String emailfield = prop.getProperty("emailField");
+	public void email() {
+		String email = location.getProperty("email");
+		String emailfield = location.getProperty("emailField");
 		driver.findElement(By.name(emailfield)).clear();
 		driver.findElement(By.name(emailfield)).sendKeys(email);
 	}
 	
-	public static void address(WebDriver driver, Properties prop) {
-		String addr = prop.getProperty("addr");
-		String addrField = prop.getProperty("addrfield");
+	public void address() {
+		String addr = location.getProperty("addr");
+		String addrField = location.getProperty("addrfield");
 		driver.findElement(By.name(addrField)).clear();
 		driver.findElement(By.name(addrField)).sendKeys(addr);
 	}
 	
-	public static void city(WebDriver driver, Properties prop) {
-		String city = prop.getProperty("city");
-		String cityField = prop.getProperty("cityfield");
+	public void city() {
+		String city = location.getProperty("city");
+		String cityField = location.getProperty("cityfield");
 		driver.findElement(By.name(cityField)).clear();
 		driver.findElement(By.name(cityField)).sendKeys(city);
 	}
 	
-	public static void state(WebDriver driver, Properties prop) {
-		String state = prop.getProperty("state");
-		String stateField = prop.getProperty("statefield");
+	public void state() {
+		String state = location.getProperty("state");
+		String stateField = location.getProperty("statefield");
 		driver.findElement(By.name(stateField)).clear();
 		driver.findElement(By.name(stateField)).sendKeys(state);
 	}
 	
-	public static void zipCode(WebDriver driver, Properties prop) {
-		String zip = prop.getProperty("zip");
-		String zipField = prop.getProperty("zipfield");
+	public void zipCode() {
+		String zip = location.getProperty("zip");
+		String zipField = location.getProperty("zipfield");
 		driver.findElement(By.name(zipField)).clear();
 		driver.findElement(By.name(zipField)).sendKeys(zip);
 	}
 	
-	public static void updatePhone(WebDriver driver, Properties prop) {
-		String phoneNum = prop.getProperty("phone");
-		String phoneNumfield = prop.getProperty("phoneNumfield");
+	public void updatePhone() {
+		String phoneNum = location.getProperty("phone");
+		String phoneNumfield = location.getProperty("phoneNumfield");
 		driver.findElement(By.name(phoneNumfield)).clear();
 		driver.findElement(By.name(phoneNumfield)).sendKeys(phoneNum);
 	}
 	
-	public static void methodOfTran(WebDriver driver, Properties prop) {
-		String methTran = prop.getProperty("methTrans");
+	public void methodOfTran() {
+		String methTran = location.getProperty("methTrans");
 		driver.findElement(By.xpath(methTran)).click();
 	}
 	
-	public static void hasCar(WebDriver driver, Properties prop) {
-		String car = prop.getProperty("hasCar");
+	public void hasCar() {
+		String car = location.getProperty("hasCar");
 		driver.findElement(By.xpath(car)).click();
 	}
 	
@@ -98,7 +102,7 @@ public class AsscFormPage {
 	 static String calYear = null;
 	 static boolean dateNotFound;
 	 
-	public static void selectDate(WebDriver driver, Properties prop, String date)
+	public void selectDate(WebDriver driver, Properties prop, String date)
 	 {
 	  datePicker = driver.findElement(By.id("ui-datepicker-div")); 
 	  noOfColumns=datePicker.findElements(By.tagName("td"));
@@ -113,7 +117,7 @@ public class AsscFormPage {
 	  }
 	 }
 	
-	public static void pickExpDate(WebDriver driver, Properties prop) throws InterruptedException {
+	public void pickExpDate(WebDriver driver, Properties prop) throws InterruptedException {
 		
 		  //Click on date text box to open date picker popup.
 		  driver.findElement(By.xpath("//input[@id='date']")).click();
@@ -159,9 +163,9 @@ public class AsscFormPage {
 	
 	}
 	
-	public static void arrivalDate(WebDriver driver, Properties prop) throws InterruptedException {
+	public void arrivalDate(WebDriver driver, Properties prop) throws InterruptedException {
 		pickExpDate(driver, prop);
-		//String arrivalDate = prop.getProperty("arrivalDate");
+		//String arrivalDate = location.getProperty("arrivalDate");
 		//driver.findElement(By.id(arrivalDate)).click();
 		
 		//driver.findElement(By.linkText("next")).click(); //click next month
@@ -170,19 +174,19 @@ public class AsscFormPage {
 					
 		// WebElement nextLink = driver.findElement(By.xpath("//div[@id='ui-datepicker-div']//div[@class='ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all']//a[contains(@class,'ui-datepicker-next ui-corner-all')]"));
 		// nextLink.click();
-		//String calendar = prop.getProperty("calendar");
+		//String calendar = location.getProperty("calendar");
 		//driver.findElement(By.xpath(calendar)).click();
-		//String selectDate = prop.getProperty("selectDate");
+		//String selectDate = location.getProperty("selectDate");
 		//driver.findElement(By.xpath(selectDate)).click();
 		
 	}
 	
-	public static void submit(WebDriver driver, Properties prop) {
-		String send = prop.getProperty("assocSubmit");
+	public void submit(WebDriver driver, Properties prop) {
+		String send = location.getProperty("assocSubmit");
 		driver.findElement(By.name(send)).click();
 	}
 	
-	public static void returnHome(WebDriver driver, Properties prop) {
+	public void returnHome(WebDriver driver, Properties prop) {
 		driver.findElement(By.name("Home")).click();
 	}
 }

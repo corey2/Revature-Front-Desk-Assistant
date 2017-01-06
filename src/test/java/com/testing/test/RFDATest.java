@@ -25,22 +25,23 @@ import org.testng.annotations.AfterSuite;
 public class RFDATest {
 	
 	private WebDriver driver = null;
-	private Properties prop = null;
+	private Properties location = null;
+	private Properties input = null;
 	
 	@Test(priority=0)
 	public void homeTest() throws InterruptedException {  //Tests all three buttons on the home page.
 		HomePage homepage = new HomePage(driver);
 		Thread.sleep(1000);
 		homepage.homeLogin();
-		Assert.assertEquals(driver.getTitle(), prop.getProperty("loginPg"));
+		Assert.assertEquals(driver.getTitle(), location.getProperty("loginPg"));
 		driver.navigate().back();
 		Thread.sleep(1000);
 		homepage.homeLoginNB();
-		Assert.assertEquals(driver.getTitle(), prop.getProperty("loginPg"));
+		Assert.assertEquals(driver.getTitle(), location.getProperty("loginPg"));
 		driver.navigate().back();
 		Thread.sleep(1000);
 		homepage.homeLoginRevature();
-		Assert.assertEquals(driver.getTitle(), prop.getProperty("loginPg"));
+		Assert.assertEquals(driver.getTitle(), location.getProperty("loginPg"));
 		//driver.navigate().back();
 		Thread.sleep(1000);
 		//Thread.sleep(800);
@@ -57,19 +58,20 @@ public class RFDATest {
 		Thread.sleep(1000);
 		loginpage.login("login");
 		Thread.sleep(1000);
-		Assert.assertEquals(driver.getTitle(), prop.getProperty("adminPg"));	
+		Assert.assertEquals(driver.getTitle(), location.getProperty("adminPg"));	
+	}
+	
+	
+	@Test(priority=2)
+	public void adminPageTest() throws InterruptedException {
+		AdminPage adminpage = new AdminPage(driver);
+		Thread.sleep(1000);
+		adminpage.enterAdminDashbd("adminDB");
+		Thread.sleep(1000);
+		Assert.assertEquals(driver.getTitle(), location.getProperty("dashPg"));
 	}
 	
 	/*
-	@Test(priority=2)
-	public void adminDashboard() throws InterruptedException {
-		Thread.sleep(2000);
-		AdminDashPage.enterAdminDashbd(driver, prop);
-		AdminDashPage.verifyNavigation(driver, prop);
-		Thread.sleep(2000);
-		AdminDashPage.returnHome(driver, prop);
-	}
-	
 	@Test(priority=3)
 	public void updateAssoc() throws InterruptedException {
 		Thread.sleep(3000);
@@ -165,8 +167,9 @@ public class RFDATest {
   public void beforeClass() {
 	  driver = GetDriver.getChrome();
 	  //driver = GetDriver.getFirefox();
-	  prop = GetDriver.getProperties();
-	  driver.get(prop.getProperty("url"));	   //retrieve the url from properties file location.properties
+	  location = GetDriver.getProperties("location.properties");
+	  input = GetDriver.getProperties("input.properties");
+	  driver.get(location.getProperty("url"));	   //retrieve the url from properties file location.properties
   }
 
   @AfterClass
