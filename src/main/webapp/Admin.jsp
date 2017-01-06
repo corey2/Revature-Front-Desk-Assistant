@@ -159,11 +159,11 @@
                             data-endeasing="Power1.easeIn"
                             data-captionhidden="off"
                             style="z-index: 6">
-                           <span class="page-scroll"><a href="/FrontDeskAssist/AdminController?behavior=listAssociates" class="btn-u btn-brd btn-brd-hover btn-u-light" name="adminDashbd">Administration Dashboard</a></span>
-                           <span class="page-scroll"><a href="Search.jsp" class="btn-u btn-brd btn-brd-hover btn-u-light">Search for an Associate</a></span> 
-                           <span class="page-scroll"><a href="Create.jsp" class="btn-u btn-brd btn-brd-hover btn-u-light">Add a User</a></span>
-                          <span class="page-scroll"><a href="Update.jsp" class="btn-u btn-brd btn-brd-hover btn-u-light">Update Associate</a></span> 
-                          <span class="page-scroll"><a href="ChangePassword.jsp" class="btn-u btn-brd btn-brd-hover btn-u-light">Change Password</a></span> 
+                           <span class="page-scroll"><a name="adminDashbd" href="/FrontDeskAssist/AdminController?behavior=listAssociates" class="btn-u btn-brd btn-brd-hover btn-u-light">Administration Dashboard</a></span>
+                           <span class="page-scroll"><a name="search" href="Search.jsp" class="btn-u btn-brd btn-brd-hover btn-u-light">Search for an Associate</a></span> 
+                           <span class="page-scroll"><a name="create" href="Create.jsp" class="btn-u btn-brd btn-brd-hover btn-u-light">Add a User</a></span>
+                           <span class="page-scroll"><a name="update" href="Update.jsp" class="btn-u btn-brd btn-brd-hover btn-u-light">Update Associate</a></span> 
+                           <span class="page-scroll"><a name="changePassword" href="ChangePassword.jsp" class="btn-u btn-brd btn-brd-hover btn-u-light">Change Password</a></span> 
                         </div>
                     </li>
 
@@ -213,11 +213,11 @@
                             data-endeasing="Power1.easeIn"
                             data-captionhidden="off"
                             style="z-index: 6">
-                           <span class="page-scroll"><a href="/FrontDeskAssist/AdminController?behavior=listAssociates" class="btn-u btn-brd btn-brd-hover btn-u-light" name="adminDashbd">Administration Dashboard</a></span>
-                           <span class="page-scroll"><a href="Search.jsp" class="btn-u btn-brd btn-brd-hover btn-u-light">Search for an Associate</a></span> 
-                           <span class="page-scroll"><a href="Create.jsp" class="btn-u btn-brd btn-brd-hover btn-u-light">Add a User</a></span> 
-                          <span class="page-scroll"><a href="Update.jsp" class="btn-u btn-brd btn-brd-hover btn-u-light">Update Associate</a></span> 
-                          <span class="page-scroll"><a href="ChangePassword.jsp" class="btn-u btn-brd btn-brd-hover btn-u-light">Change Password</a></span> 
+                           <span class="page-scroll"><a name="adminDashbd" href="/FrontDeskAssist/AdminController?behavior=listAssociates" class="btn-u btn-brd btn-brd-hover btn-u-light">Administration Dashboard</a></span>
+                           <span class="page-scroll"><a name="search" href="Search.jsp" class="btn-u btn-brd btn-brd-hover btn-u-light">Search for an Associate</a></span> 
+                           <span class="page-scroll"><a name="create" href="Create.jsp" class="btn-u btn-brd btn-brd-hover btn-u-light">Add a User</a></span>
+                           <span class="page-scroll"><a name="update" href="Update.jsp" class="btn-u btn-brd btn-brd-hover btn-u-light">Update Associate</a></span> 
+                           <span class="page-scroll"><a name="changePassword" href="ChangePassword.jsp" class="btn-u btn-brd btn-brd-hover btn-u-light">Change Password</a></span> 
                         </div>
                     </li> 
 
@@ -267,11 +267,11 @@
                             data-endeasing="Power1.easeIn"
                             data-captionhidden="off"
                             style="z-index: 6">
-                           <span class="page-scroll"><a href="/FrontDeskAssist/AdminController?behavior=listAssociates" class="btn-u btn-brd btn-brd-hover btn-u-light" name="adminDashbd">Administration Dashboard</a></span>
-                           <span class="page-scroll"><a href="Search.jsp" class="btn-u btn-brd btn-brd-hover btn-u-light">Search for an Associate</a></span> 
-                           <span class="page-scroll"><a href="Create.jsp" class="btn-u btn-brd btn-brd-hover btn-u-light">Add a User</a></span> 
-                          <span class="page-scroll"><a href="Update.jsp" class="btn-u btn-brd btn-brd-hover btn-u-light">Update Associate</a></span> 
-                          <span class="page-scroll"><a href="ChangePassword.jsp" class="btn-u btn-brd btn-brd-hover btn-u-light">Change Password</a></span> 
+                           <span class="page-scroll"><a name="adminDashbd" href="/FrontDeskAssist/AdminController?behavior=listAssociates" class="btn-u btn-brd btn-brd-hover btn-u-light">Administration Dashboard</a></span>
+                           <span class="page-scroll"><a name="search" href="Search.jsp" class="btn-u btn-brd btn-brd-hover btn-u-light">Search for an Associate</a></span> 
+                           <span class="page-scroll"><a name="create" href="Create.jsp" class="btn-u btn-brd btn-brd-hover btn-u-light">Add a User</a></span>
+                           <span class="page-scroll"><a name="update" href="Update.jsp" class="btn-u btn-brd btn-brd-hover btn-u-light">Update Associate</a></span> 
+                           <span class="page-scroll"><a name="changePassword" href="ChangePassword.jsp" class="btn-u btn-brd btn-brd-hover btn-u-light">Change Password</a></span> 
                         </div>
                     </li>                    
                 </ul>

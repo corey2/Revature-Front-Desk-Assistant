@@ -12,9 +12,10 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.BeforeClass;
 
 import java.util.Properties;
-import java.util.concurrent.TimeUnit;
+//import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeTest;
@@ -24,27 +25,23 @@ import org.testng.annotations.AfterSuite;
 
 public class RFDATest {
 	
-	private WebDriver driver = null;
-	private Properties location = null;
-	private Properties input = null;
+	private WebDriver webDriver;
+	private EventFiringWebDriver driver;
+	private EventListener eventListener;
+	private Properties location;
 	
 	@Test(priority=0)
 	public void homeTest() throws InterruptedException {  //Tests all three buttons on the home page.
 		HomePage homepage = new HomePage(driver);
-		Thread.sleep(1000);
 		homepage.homeLogin();
 		Assert.assertEquals(driver.getTitle(), location.getProperty("loginPg"));
 		driver.navigate().back();
-		Thread.sleep(1000);
 		homepage.homeLoginNB();
 		Assert.assertEquals(driver.getTitle(), location.getProperty("loginPg"));
 		driver.navigate().back();
-		Thread.sleep(1000);
 		homepage.homeLoginRevature();
 		Assert.assertEquals(driver.getTitle(), location.getProperty("loginPg"));
 		//driver.navigate().back();
-		Thread.sleep(1000);
-		//Thread.sleep(800);
 		//driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	}
 	
@@ -52,12 +49,9 @@ public class RFDATest {
 	@Test(priority=1)
 	public void loginAdminTest() throws InterruptedException {	
 		LoginPage loginpage = new LoginPage(driver);
-		Thread.sleep(1000);
 		loginpage.inputUsername("usernameField", "adminUsername");
 		loginpage.inputPassword("passwordField", "adminPassword");
-		Thread.sleep(1000);
 		loginpage.login("login");
-		Thread.sleep(1000);
 		Assert.assertEquals(driver.getTitle(), location.getProperty("adminPg"));	
 	}
 	
@@ -65,10 +59,11 @@ public class RFDATest {
 	@Test(priority=2)
 	public void adminPageTest() throws InterruptedException {
 		AdminPage adminpage = new AdminPage(driver);
-		Thread.sleep(1000);
-		adminpage.enterAdminDashbd("adminDB");
-		Thread.sleep(1000);
+		adminpage.enterDashbd("adminDB");
 		Assert.assertEquals(driver.getTitle(), location.getProperty("dashPg"));
+		driver.navigate().back();
+		adminpage.enterSearch("search");
+		
 	}
 	
 	/*
@@ -165,11 +160,16 @@ public class RFDATest {
   
   @BeforeClass
   public void beforeClass() {
-	  driver = GetDriver.getChrome();
+	  webDriver = GetDriver.getChrome();
 	  //driver = GetDriver.getFirefox();
 	  location = GetDriver.getProperties("location.properties");
-	  input = GetDriver.getProperties("input.properties");
+	  
+	  driver = new EventFiringWebDriver(webDriver);
+	  eventListener = new EventListener();
+	  driver.register(eventListener);
+	  
 	  driver.get(location.getProperty("url"));	   //retrieve the url from properties file location.properties
+	  
   }
 
   @AfterClass
