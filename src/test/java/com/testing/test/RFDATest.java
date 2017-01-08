@@ -33,13 +33,13 @@ public class RFDATest {
 	@Test(priority=0)
 	public void homeTest() throws InterruptedException {  //Tests all three buttons on the home page.
 		HomePage homepage = new HomePage(driver);
-		homepage.homeLogin();
+		homepage.homeLogin("homeLogin");
 		Assert.assertEquals(driver.getTitle(), location.getProperty("loginPg"));
 		driver.navigate().back();
-		homepage.homeLoginNB();
+		homepage.homeLoginNB("homeLoginNB");
 		Assert.assertEquals(driver.getTitle(), location.getProperty("loginPg"));
 		driver.navigate().back();
-		homepage.homeLoginRevature();
+		homepage.homeLoginRevature("homeLoginRevature");
 		Assert.assertEquals(driver.getTitle(), location.getProperty("loginPg"));
 		//driver.navigate().back();
 		//driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -74,84 +74,66 @@ public class RFDATest {
 		adminpage.enterChangePassword("changePassword");
 		Assert.assertEquals(driver.getTitle(), location.getProperty("changePasswordPg"));
 		driver.navigate().back();
-		
-	
-	
-	
 	}
 	
-	/*
-	@Test(priority=3)
-	public void updateAssoc() throws InterruptedException {
-		Thread.sleep(3000);
-		UpdateAssocPage.enterUpdateAssoc(driver, prop);
-		Thread.sleep(1000);
-		UpdateAssocPage.enterUserName(driver, prop);
-		UpdateAssocPage.firstName(driver, prop);
-		UpdateAssocPage.lastName(driver, prop);
-		UpdateAssocPage.updateGender(driver, prop);
-		UpdateAssocPage.email(driver, prop);
-		UpdateAssocPage.address(driver, prop);
-		UpdateAssocPage.city(driver, prop);
-		UpdateAssocPage.state(driver, prop);
-		UpdateAssocPage.zipCode(driver, prop);
-		UpdateAssocPage.updatePhone(driver, prop);
-		UpdateAssocPage.methodOfTran(driver, prop);
-		UpdateAssocPage.hasCar(driver, prop);
-		Thread.sleep(1000);
-		UpdateAssocPage.arrivalDate(driver, prop);
-		Thread.sleep(1000);
-		UpdateAssocPage.submit(driver, prop);
-		Thread.sleep(2000);
-		UpdateAssocPage.successfulUpdate(driver, prop);
-	}
+	//@Test(priority=3)
+	//public void adminDashboardTest() throws InterruptedException {
+	//}
+	
 	
 	@Test(priority=4)
 	public void addAssociate() throws InterruptedException {
-		Thread.sleep(2000);
-		AddAssociate.enterAddAssoc(driver, prop);
-		Thread.sleep(2000);
-		AddAssociate.addUserName(driver, prop);
-		AddAssociate.firstName(driver, prop);
-		AddAssociate.lastName(driver, prop);
-		AddAssociate.email(driver, prop);
-		AddAssociate.submit(driver, prop);
-		Thread.sleep(2000);
-		AddAssociate.successfulSentEmail(driver, prop);
-		Thread.sleep(2000);
-		AddAssociate.logOut(driver, prop);
-		Thread.sleep(2000);
-		AddAssociate.logOutSuccess(driver, prop);
+		AddUserPage aup = new AddUserPage(driver);
+		aup.username("addUsernameField", "steven");
+		aup.firstName("addFnameField", "Scott");
+		aup.lastName("addLnameField", "West");
+		aup.email("addEmailField", "guxcd@yahoo.com");
+		aup.submit();
+		aup.successfulSentEmail();
+		aup.logOut();
+		aup.logOutSuccess();
 		//Log back in
-		Thread.sleep(3000);
-		//HomePage.homeLoginNB(driver, prop);
-		//HomePage.verifyLogin(driver, prop);
+		//HomePage.homeLoginNB();
+		//HomePage.verifyLogin();
 		//log in as admin
-		Thread.sleep(2000);
-		LoginAdminPage.inputUsername(driver, prop);
-		LoginAdminPage.inputPassword(driver, prop);
-		Thread.sleep(2000);
-		LoginAdminPage.login(driver, prop);
-		Thread.sleep(2000);
-		LoginAdminPage.verifyLogin(driver, prop);	
-		//HomePage.returnHome(driver, prop);
+		//LoginAdminPage.inputUsername();
+		//LoginAdminPage.inputPassword();
+		//LoginAdminPage.login();
+		//LoginAdminPage.verifyLogin();	
+		//HomePage.returnHome();
+	}
+
+	/*
+	@Test(priority=5)
+	public void updateAssoc() throws InterruptedException {
+		UpdateAssocPage.enterUpdateAssoc();
+		UpdateAssocPage.enterUserName();
+		UpdateAssocPage.firstName();
+		UpdateAssocPage.lastName();
+		UpdateAssocPage.updateGender();
+		UpdateAssocPage.email();
+		UpdateAssocPage.address();
+		UpdateAssocPage.city();
+		UpdateAssocPage.state();
+		UpdateAssocPage.zipCode();
+		UpdateAssocPage.updatePhone();
+		UpdateAssocPage.methodOfTran();
+		UpdateAssocPage.hasCar();
+		UpdateAssocPage.arrivalDate();
+		UpdateAssocPage.submit();
+		UpdateAssocPage.successfulUpdate();
 	}
 	
-	@Test(priority=5)
+	@Test(priority=6)
 	public void searchAssociate() throws InterruptedException{
 		
-		Thread.sleep(2000);
-		SearchAssociate.enterSearchAssoc(driver, prop);
-		Thread.sleep(2000);
-		SearchAssociate.firstNameSearch(driver, prop);
-		SearchAssociate.lastNameSearch(driver, prop);
-		SearchAssociate.submitSearch(driver, prop);
-		Thread.sleep(2000);
-		SearchAssociate.searchUpdate(driver, prop);
-		Thread.sleep(1000);
-		SearchAssociate.updateHomeNavBar(driver, prop);
-		Thread.sleep(1000);
-		SearchAssociate.searchLogOut(driver, prop);
+		SearchAssociate.enterSearchAssoc();
+		SearchAssociate.firstNameSearch();
+		SearchAssociate.lastNameSearch();
+		SearchAssociate.submitSearch();
+		SearchAssociate.searchUpdate();
+		SearchAssociate.updateHomeNavBar();
+		SearchAssociate.searchLogOut();
 	}
 	*/
 	 
