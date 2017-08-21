@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.Dao.java.AssociateDAO;
 import com.pojos.java.AssociatePOJO;
-import com.pojos.java.Capitalizer;
-import com.pojos.java.EmailGenerator;
+import com.util.java.Capitalizer;
+import com.util.java.EmailGenerator;
 
 @SuppressWarnings("serial")
 public class AssociateController extends HttpServlet {

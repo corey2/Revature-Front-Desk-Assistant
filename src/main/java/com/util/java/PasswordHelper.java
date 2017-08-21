@@ -1,4 +1,4 @@
-package com.pojos.java;
+package com.util.java;
 
 import java.util.UUID;
 import org.mindrot.jbcrypt.BCrypt;

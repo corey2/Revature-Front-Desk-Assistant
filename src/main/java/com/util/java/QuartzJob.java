@@ -1,4 +1,4 @@
-package com.pojos.java;
+package com.util.java;
 
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;

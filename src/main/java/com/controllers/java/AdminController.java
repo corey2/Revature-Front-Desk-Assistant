@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.Dao.java.AdminDAO;
 import com.pojos.java.AdminPOJO;
 import com.pojos.java.AssociatePOJO;
-import com.pojos.java.Capitalizer;
+import com.util.java.Capitalizer;
 
 
 @SuppressWarnings("serial")

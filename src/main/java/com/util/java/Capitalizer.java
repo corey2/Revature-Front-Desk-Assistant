@@ -1,4 +1,4 @@
-package com.pojos.java;
+package com.util.java;
 
 public class Capitalizer {
 	public static String use(String original) {

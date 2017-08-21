@@ -1,4 +1,4 @@
-package com.pojos.java;
+package com.util.java;
 import java.util.*; 
 import javax.mail.*;
 import javax.mail.internet.*;

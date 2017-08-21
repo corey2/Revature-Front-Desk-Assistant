@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.Dao.java.LoginDAO;
 import com.pojos.java.LoginPOJO;
-import com.pojos.java.PasswordHelper;
+import com.util.java.PasswordHelper;
 
 //This controller is used to confirm the given password and assign a user role when a user logs in.
 @SuppressWarnings("serial")

@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.Dao.java.AssociateDAO;
 import com.pojos.java.AssociatePOJO;
-import com.pojos.java.EmailGenerator;
+import com.util.java.EmailGenerator;
 
 
 //This controller is used when someone fills out the Contact Human Resources form.

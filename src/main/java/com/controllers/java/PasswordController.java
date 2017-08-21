@@ -11,9 +11,9 @@ import com.Dao.java.AdminDAO;
 import com.Dao.java.LoginDAO;
 import com.pojos.java.AdminPOJO;
 import com.pojos.java.AssociatePOJO;
-import com.pojos.java.EmailGenerator;
+import com.util.java.EmailGenerator;
 import com.pojos.java.LoginPOJO;
-import com.pojos.java.PasswordHelper;
+import com.util.java.PasswordHelper;
 
 
 public class PasswordController extends HttpServlet {
