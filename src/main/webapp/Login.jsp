@@ -21,7 +21,7 @@
     <!-- CSS Implementing Plugins -->
     <link rel="stylesheet" href="Template/assets/plugins/line-icons/line-icons.css">
     <link rel="stylesheet" href="Template/assets/plugins/font-awesome/css/font-awesome.min.css">
-     <link rel="stylesheet" href="Template/assets/plugins/ladda-buttons/css/custom-lada-btn.css">
+    <link rel="stylesheet" href="Template/assets/plugins/ladda-buttons/css/custom-lada-btn.css">
     <link rel="stylesheet" href="Template/assets/css/plugins/hover-effect/css/custom-hover-effects.css">  
 
     <!-- CSS Page Style -->    

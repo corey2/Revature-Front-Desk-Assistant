@@ -17,9 +17,9 @@ public class Util {
                 //InputStream inputStream = Util.class.getClassLoader().getResourceAsStream("db-config.properties");
                 //prop.load(inputStream);
 				String driver = "oracle.jdbc.OracleDriver";
-				String url = "jdbc:oracle:thin:@rfda.ct6hxvbzykg1.us-west-2.rds.amazonaws.com:1521:ORCL";
-				String user = "clshaps93";
-				String password = "coreyls93";
+				String url = "jdbc:oracle:thin:@localhost:1521:XE";
+				String user = "rfda1";
+				String password = "rfda3";
 				Class.forName(driver);
 				connection = DriverManager.getConnection(url, user, password);
 			} catch (Exception e) {
