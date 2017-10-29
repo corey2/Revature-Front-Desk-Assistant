@@ -65,7 +65,7 @@ public class PasswordController extends HttpServlet {
 				if (userType.equals("associate")) {
 					body = "Use the username and password listed below to log in to the Revature platform where "
 								+ "you will be able to submit important information to Human Resources and Housing "
-								+ "Departments regarding your arrival and stay in Reston. It is recommended you change  "
+								+ "Departments regarding your arrival and stay in Reston. It is recommended you change "
 								+ "your password after you log in."
 								+ "\n\n"
 								+ "Username: "+username

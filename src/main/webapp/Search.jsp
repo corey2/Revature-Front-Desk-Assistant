@@ -74,7 +74,7 @@
 					href="/FrontDeskAssist/AdminController?behavior=listAssociates">Admin
 						Dashboard</a></li>
 				<li><a href="Update.jsp">Update Associate</a></li>
-				<li><a href="Create.jsp">Add an Associate</a></li>
+				<li><a href="Create.jsp">Add a User</a></li>
 				<li><a href="LogOut.jsp">Log Out</a></li>
 			</ul>
 		</div>
