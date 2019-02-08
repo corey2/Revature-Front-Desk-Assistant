@@ -139,7 +139,7 @@
 				</div>
 
 				<br />
-				<form class="form-horizontal" action="AdminController" method="POST">
+				<form class="form-horizontal" action="sendLoginEmail" method="POST">
 					<div class="form-group">
 						<label>Type of user</label>
 						<div class="row margin-bottom-20">

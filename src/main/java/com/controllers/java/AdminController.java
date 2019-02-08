@@ -83,7 +83,7 @@ public class AdminController extends HttpServlet {
 	        	admin.setEmail(request.getParameter("email"));
 	    		dao.addAdmin(admin);
     		}
-    		view = request.getRequestDispatcher("/sendLoginEmail");
+    		view = request.getRequestDispatcher("SubmitEmailView.jsp");
     	}
     	
     	if (crudMethod.equals("read")) {    //From Search.jsp

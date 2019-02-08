@@ -114,7 +114,7 @@ public class PasswordController extends HttpServlet {
 					request.setAttribute("emailType", "addressNotFoundEmail");
 				}
 			}
-			view = request.getRequestDispatcher(SUBMIT_EMAIL);
+			view = request.getRequestDispatcher("/AdminController");
 			
 		} else if (passwordType.equals("perm")) {   //This runs when a user requests to change their password.
 			username = (String) this.getServletContext().getAttribute("username");

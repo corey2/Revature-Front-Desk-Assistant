@@ -20,16 +20,12 @@ public class LoginDAO {
 		try {  //Gets hashed password and user role from the database using the given username.
 			PreparedStatement preparedStatement = connection
 					.prepareStatement("SELECT Password, Userrole FROM Login WHERE Username=?");
-			//System.out.println("The username for this user is "+user.getUsername());
 			preparedStatement.setString(1, user.getUsername());
 			rs = preparedStatement.executeQuery();
 			while (rs.next()) {
-				//System.out.println("The password stored in the database for this user is "+rs.getString("password"));
 				user.setPassword(rs.getString("password"));
 				user.setUserRole(rs.getInt("userrole")); 
 			}
-			//System.out.println("The password that was just put into the user POJO is "+user.getPassword());
-			//System.out.println("The user role for this user is "+user.getUserRole());
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
