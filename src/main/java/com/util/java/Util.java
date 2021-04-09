@@ -20,7 +20,10 @@ public class Util {
 				String url = "jdbc:oracle:thin:@rfda.ct6hxvbzykg1.us-west-2.rds.amazonaws.com:1521:ORCL";
 				String user = "clshaps93";
 				String password = "coreyls93";
+				//System.out.println("Here1");
 				Class.forName(driver);
+				//DriverManager.registerDriver (new oracle.jdbc.OracleDriver());
+				//System.out.println("Here2");
 				connection = DriverManager.getConnection(url, user, password);
 			} catch (Exception e) {
 				e.printStackTrace();
