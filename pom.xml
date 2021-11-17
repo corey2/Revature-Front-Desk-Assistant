@@ -16,13 +16,14 @@
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-			<version>2.5</version>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.0.1</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
-			<version>1.2</version>
+  			<groupId>javax.servlet</groupId>
+  			<artifactId>jstl</artifactId>
+  			<version>1.2</version>
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -66,13 +67,11 @@
 			<artifactId>cucumber-junit</artifactId>
 			<version>1.2.4</version>
 		</dependency>
-
 		<dependency>
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-java</artifactId>
 			<version>1.2.4</version>
 		</dependency>
-	
 		<dependency>
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-core</artifactId>
@@ -121,11 +120,32 @@
 		    <groupId>com.oracle.ojdbc</groupId>
 		    <artifactId>ojdbc10</artifactId>
 		    <version>19.3.0.0</version>
-		</dependency>
+		</dependency>	
 		
-
+		<!-- https://stackoverflow.com/questions/6094329/tomcat-7-and-jstl -->
+		<dependency>
+		    <groupId>org.glassfish.web</groupId>
+		    <artifactId>jstl-impl</artifactId>
+		    <version>1.2</version>
+		    <exclusions>
+		        <exclusion>
+		            <artifactId>servlet-api</artifactId>
+		            <groupId>javax.servlet</groupId>
+		        </exclusion>
+		        <exclusion>
+		            <artifactId>jsp-api</artifactId>
+		            <groupId>javax.servlet.jsp</groupId>
+		        </exclusion>
+		        <exclusion>
+		            <artifactId>jstl-api</artifactId>
+		            <groupId>javax.servlet.jsp.jstl</groupId>
+		        </exclusion>
+		    </exclusions>
+		</dependency>
+				
+		
 	</dependencies>
-
+	
 	<build>
 		<finalName>FrontDeskAssist</finalName>
 		<plugins>
