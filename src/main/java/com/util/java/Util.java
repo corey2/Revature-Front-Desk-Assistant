@@ -3,39 +3,51 @@ package com.util.java;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
+
+import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
+import com.microsoft.sqlserver.jdbc.SQLServerDriver;
 
 public class Util {
 	private static Connection connection = null;
 
-	//Simple connect statements to connect to the database.
-	//Had to hard code them because they were not getting them from the file.
+	
+	//Do I need to add this to the run configuration for Tomcat 9?: Djava.library.path="C:\Program Files\Java\jre1.8.0_251\bin"
+	
+	//To get the windows authentication to work (represented by integratedSecurity=true), you need to move a file called 
+	//mssql-jdbc_auth-9.4.0.x64.dll, which can be found in SQL Server JDBC Driver zip folder available here: 
+	//(https://docs.microsoft.com/en-us/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server)
+	//to the bin folder in the jdk folder in the folder where you have Java installed.
 	public static Connection getConnection() {
 		if (connection != null)
 			return connection;
 		else {
 			try {
-                //Properties prop = new Properties();
-                //InputStream inputStream = Util.class.getClassLoader().getResourceAsStream("db-config.properties");
-                //prop.load(inputStream);
-				String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-				String url = "jdbc:sqlserver://localhost;databasename=RFDA";
-				//String user = "clshaps93";
-				//String password = "coreyls93";
-				//System.out.println("Here1");
-				Class.forName(driver);
-				//DriverManager.registerDriver (new oracle.jdbc.OracleDriver());
-				//System.out.println("Here2");
-				connection = DriverManager.getConnection(url);
+				//System.out.println("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+				//System.out.println(Class.forName(driver));
+				Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");  
+				String url = "jdbc:sqlserver://localhost;database=RFDA;integratedSecurity=true";  
+	
+				connection = DriverManager.getConnection(url);  
 				
 				Statement statement = connection.createStatement();
 				String selectSql = "SELECT * FROM Login";
 				ResultSet resultSet = statement.executeQuery(selectSql);
 				System.out.println("SQL Server Test");
 				while (resultSet.next()) {
-	                System.out.println(resultSet.getString(2) + " " + resultSet.getString(3));
+	                System.out.println(resultSet.getString(1) + " " + resultSet.getString(2));
 	            }
+	            
+				
+				/*
+				SQLServerDataSource sqlDs = new SQLServerDataSource();
+				sqlDs.setIntegratedSecurity(true);
+				sqlDs.setServerName("localhost");
+				sqlDs.setDatabaseName("RFDA");
+				connection = sqlDs.getConnection();
+				
+	            */
+				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
