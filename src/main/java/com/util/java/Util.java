@@ -2,6 +2,9 @@ package com.util.java;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class Util {
 	private static Connection connection = null;
@@ -16,15 +19,23 @@ public class Util {
                 //Properties prop = new Properties();
                 //InputStream inputStream = Util.class.getClassLoader().getResourceAsStream("db-config.properties");
                 //prop.load(inputStream);
-				String driver = "oracle.jdbc.OracleDriver";
-				String url = "jdbc:oracle:thin:@rfda.ct6hxvbzykg1.us-west-2.rds.amazonaws.com:1521:ORCL";
-				String user = "clshaps93";
-				String password = "coreyls93";
+				String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+				String url = "jdbc:sqlserver://localhost;databasename=RFDA";
+				//String user = "clshaps93";
+				//String password = "coreyls93";
 				//System.out.println("Here1");
 				Class.forName(driver);
 				//DriverManager.registerDriver (new oracle.jdbc.OracleDriver());
 				//System.out.println("Here2");
-				connection = DriverManager.getConnection(url, user, password);
+				connection = DriverManager.getConnection(url);
+				
+				Statement statement = connection.createStatement();
+				String selectSql = "SELECT * FROM Login";
+				ResultSet resultSet = statement.executeQuery(selectSql);
+				System.out.println("SQL Server Test");
+				while (resultSet.next()) {
+	                System.out.println(resultSet.getString(2) + " " + resultSet.getString(3));
+	            }
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
