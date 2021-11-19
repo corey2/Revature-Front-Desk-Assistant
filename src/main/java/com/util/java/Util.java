@@ -25,29 +25,19 @@ public class Util {
 			try {
 				//System.out.println("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 				//System.out.println(Class.forName(driver));
-				Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");  
-				String url = "jdbc:sqlserver://localhost;database=RFDA;integratedSecurity=true";  
-	
-				connection = DriverManager.getConnection(url);  
+				//System.out.println("????????????????????");
+				//System.out.println(Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver")); 
+				//System.out.println("????????????????????");
+				//String url = "jdbc:sqlserver://localhost;database=RFDA;integratedSecurity=true";  
+				//connection = DriverManager.getConnection(url); 
 				
-				Statement statement = connection.createStatement();
-				String selectSql = "SELECT * FROM Login";
-				ResultSet resultSet = statement.executeQuery(selectSql);
-				System.out.println("SQL Server Test");
-				while (resultSet.next()) {
-	                System.out.println(resultSet.getString(1) + " " + resultSet.getString(2));
-	            }
-	            
-				
-				/*
 				SQLServerDataSource sqlDs = new SQLServerDataSource();
 				sqlDs.setIntegratedSecurity(true);
 				sqlDs.setServerName("localhost");
 				sqlDs.setDatabaseName("RFDA");
 				connection = sqlDs.getConnection();
-				
-	            */
-				
+	
+				 
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

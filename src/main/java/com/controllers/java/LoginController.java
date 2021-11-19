@@ -28,11 +28,8 @@ public class LoginController extends HttpServlet{
     }
 	
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	
     	user = new LoginPOJO();
-    	System.out.println("Here1");
     	user.setUsername(request.getParameter("username"));
-    	System.out.println("Here2");
     	dao.completeUserInfo(user);
         
     	//String password = request.getParameter("password");

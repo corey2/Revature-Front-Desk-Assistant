@@ -42,14 +42,13 @@ public class GetDriver {
 	}
 	
 	public static WebDriver getChrome() {
-		File file = new File("C:/selenium-2.47.1/chromedriver.exe");
-		//File file = new File("C://seleniumDrivers/chromedriver_win32/chromedriver.exe/");
+		File file = new File("C:\\Users\\user\\selenium_drivers\\chromedriver_v96.exe");
 		System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
 		return new ChromeDriver();
 	}
 	
 	public static WebDriver getFirefox() {
-		File file = new File("C://seleniumDrivers/geckodriver-v0.11.1-win32/geckodriver.exe/");
+		File file = new File("C:\\Users\\user\\selenium_drivers\\geckodriver.exe");
 		System.setProperty("webdriver.gecko.driver", file.getAbsolutePath());
 		return new FirefoxDriver();
 	}
