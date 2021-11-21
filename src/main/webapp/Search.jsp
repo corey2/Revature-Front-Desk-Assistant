@@ -72,8 +72,8 @@
 				<li><a
 					href="/FrontDeskAssist/AdminController?behavior=listAssociates">Admin
 						Dashboard</a></li>
+				<li><a href="Create.jsp">Add a User</a></li>
 				<li><a href="Update.jsp">Update Associate</a></li>
-				<li><a href="Create.jsp">Add an Associate</a></li>
 				<li><a href="LogOut.jsp">Log Out</a></li>
 			</ul>
 		</div>
@@ -169,9 +169,9 @@
 		if (request.getAttribute("associate") != null) {
 			Object unconverted = request.getAttribute("associate");
 			AssociatePOJO associate = (AssociatePOJO) unconverted;	
-			out.write("<p>style='color:red'>First name is"+associate.getFirstName()+"</p>");
+			//out.write("<p style='color:red'>First name is "+associate.getFirstName()+"</p>");
 			if (associate.getFirstName() == null) {
-				out.write("<p>style='color:red'>That associate cannot be found in the database</p>");
+				out.write("<p style='color:red'>That associate cannot be found in the database</p>");
 			}
 			
 			//sex
@@ -189,8 +189,11 @@
     		}
     		
     		//zip code
-    		String zipString = Integer.toString(associate.getZip());
-			if (associate.getZip() == 0) {
+    		String zipString = associate.getZip();
+    		if (zipString == null) {
+    			zipString = "";
+    		}
+			if (zipString.equals("")) {
 				zipString = "";
 			} else if (zipString.length() != 5) {					
 				zipString = "Zip error: "+associate.getZip();
@@ -231,6 +234,9 @@
 			}
 			if (associate.getMethodOfTrans() == null) {
 				associate.setMethodOfTrans("");	
+			}
+			if (associate.getCarDuringTraining() == null) {
+				associate.setCarDuringTraining("");
 			}
 			
 			out.write(
@@ -274,7 +280,7 @@
 						class="btn btn-u rounded-3x btn-u-orange outline-outward">Update
 						Associate</button>
 				</form>
-				</br>
+				<br>
 				<form action="AdminController" method="POST"
 					onSubmit="if(!confirm('Are you sure you want to delete this Associate?')){return false;}">
 					<input type="hidden" name="crudMethod" value="delete"> <input

@@ -26,10 +26,8 @@ public class AdminController extends HttpServlet {
 	private RequestDispatcher view;
 	private static String HOME = "/Admin.jsp";
 	private static String DASHBOARD = "/AdminDash.jsp";
-	//private static String ADD_ASSOCIATE = "/Add.jsp";
 	private static String UPDATE_ASSOCIATE = "/Update.jsp";
 	private static String UPDATE_COMPLETE = "/UpdateComplete.jsp";
-	//private static String DELETE_ASSOCIATE = "/Delete.jsp";
 	private static String SEARCH_ASSOCIATE = "/Search.jsp";
 	
 	
@@ -93,7 +91,6 @@ public class AdminController extends HttpServlet {
     		String fntrim = fn.trim();
     		String lntrim = ln.trim();
     		associate = dao.getAssociateByFullName(fntrim, lntrim);
-    		System.out.println(associate.getFirstName());
     		request.setAttribute("associate", associate);
     		view = request.getRequestDispatcher(SEARCH_ASSOCIATE);
     	}

@@ -6,6 +6,7 @@ import javax.mail.internet.*;
 public class EmailGenerator {
 	public static void run(String recipient, String subject, String body) {
 		//Look up the Mail Session in JNDI:
+		
 		try {
 			final String username = "revaturefrontdeskassistant@gmail.com";
 			final String password = "thepassword";

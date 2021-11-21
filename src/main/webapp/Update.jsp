@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" 
 	import="com.pojos.java.AssociatePOJO"	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -174,8 +175,8 @@
 			<ul class="pull-right breadcrumb">
 				<li><a href="Admin.jsp">Home</a></li>
 				<li><a href="/FrontDeskAssist/AdminController?behavior=listAssociates">Admin Dashboard</a></li>
-				 <li><a href="Create.jsp">Add an Associate</a></li>
 				<li><a href="Search.jsp">Search For an Associate</a></li> 
+				<li><a href="Create.jsp">Add an Associate</a></li>
 				<li> <a href="LogOut.jsp">Log Out</a></li>
 			</ul>
 		</div>
@@ -342,14 +343,7 @@
 								<div class="col-md-8 col-md-offset-0">
 									<input type="text" id="zip" name="zip" class="form-control"
 										onblur="validateZip(value)"
-										value=
-									    "<%
-											if (associate != null) {
-												if (associate.getZip() != 0) {
-													out.println(associate.getZip());
-												}
-											}
-										%>"
+										value="${associate.zip}"
 										placeholder="Zip" required> <span id="zipError"></span>										
 								</div>
 							</div>

@@ -112,8 +112,8 @@
 				<li><a href="Admin.jsp">Home</a></li>
 				<li><a href="/FrontDeskAssist/AdminController?behavior=listAssociates">Admin
 						Dashboard</a></li>
-				  <li><a href="Update.jsp">Update Associate</a></li>
-				<li><a href="Search.jsp">Search for an Associate</a></li> 
+				<li><a href="Search.jsp">Search for an Associate</a></li>
+				<li><a href="Update.jsp">Update Associate</a></li>
 				<li> <a href="LogOut.jsp">Log Out</a></li>
 			</ul>
 		</div>

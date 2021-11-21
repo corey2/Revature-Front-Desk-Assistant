@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -73,10 +74,10 @@
             <div class="col-md-10 col-md-offset-1">              
                 <c:choose>
                 	<c:when test="${userRole == 1}">
-                		<a href="Associate.jsp"><button type="button" value="home" name="Home" class="btn-u btn-block pulse-grow">Home</button></a></br></br>
+                		<a href="Associate.jsp"><button type="button" value="home" name="Home" class="btn-u btn-block pulse-grow">Home</button></a><br>
                 	</c:when>
                 	<c:when test="${userRole == 2}">
-                		<a href="Admin.jsp"><button type="button" value="home" name="Home2" class="btn-u btn-block pulse-grow">Home</button></a></br></br>
+                		<a href="Admin.jsp"><button type="button" value="home" name="Home2" class="btn-u btn-block pulse-grow">Home</button></a><br>
 					</c:when>
 				</c:choose>
                 

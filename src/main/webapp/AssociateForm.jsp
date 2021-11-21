@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" 
 	import="com.pojos.java.AssociatePOJO" pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -256,11 +257,15 @@
 										class="form-control" onblur="validatePhone(value)" 
 										value=
 										"<% 
+										try {
 											if (associate != null) {
 												if (associate.getPhoneNumber() != 0) {
 													out.println(associate.getPhoneNumber());
 												}
 											}
+										} catch (Exception e) {
+											out.println("Problem with phone number:");
+										}
 										%>"
 										placeholder="Phone Enter: XXXXXXXXXX" required> <span id="phoneError"></span>
 								</div>
@@ -310,14 +315,7 @@
 								<div class="col-md-8 col-md-offset-0">
 									<input type="text" id="zip" name="zip" class="form-control"
 										onblur="validateZip(value)" 
-										value=
-										"<%
-											if (associate != null) {
-												if (associate.getZip() != 0) {
-													out.println(associate.getZip());
-												}
-											}
-										%>"
+										value="${associate.zip}"
 										placeholder="Zip"
 										required> <span id="zipError"></span>
 								</div>
