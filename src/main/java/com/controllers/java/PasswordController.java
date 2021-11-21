@@ -46,6 +46,11 @@ public class PasswordController extends HttpServlet {
 		if (passwordType.equals("temp")) {  
 			String password = PasswordHelper.generatepw();
 			String hashword = PasswordHelper.hashpw(password);
+			
+			//System.out.println("temp");
+			//System.out.println("The unhashed password is "+password);
+			//System.out.println("The hashed password is "+hashword);
+			
 			if (this.getServletContext().getAttribute("userRole") != null) {  //This runs right after an admin adds a user to the database.
 				int currentRole = (int) this.getServletContext().getAttribute("userRole");
 				String userType = request.getParameter("userType");
@@ -120,6 +125,7 @@ public class PasswordController extends HttpServlet {
 			username = (String) this.getServletContext().getAttribute("username");
 			String password = request.getParameter("newPassword");
 			String hashword = PasswordHelper.hashpw(password);
+			//System.out.println("perm");
 			//System.out.println("The unhashed password is "+password);
 			//System.out.println("The hashed password is "+hashword);
 			

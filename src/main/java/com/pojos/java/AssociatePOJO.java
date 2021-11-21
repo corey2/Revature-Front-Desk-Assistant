@@ -10,7 +10,7 @@ public class AssociatePOJO {
 	private String address;
 	private String city;
 	private String state;
-	private int zip;
+	private String zip;
 	private Date arrivalDate;
 	private String methodOfTrans;
 	private String carDuringTraining;
@@ -25,7 +25,7 @@ public class AssociatePOJO {
 		this.address = null;
 		this.city = null;
 		this.state = null;
-		this.zip = -1;
+		this.zip = null;
 		this.arrivalDate = null;
 		this.methodOfTrans = null;
 		this.carDuringTraining = null;
@@ -35,7 +35,7 @@ public class AssociatePOJO {
 	
 	public AssociatePOJO(String username, String firstName, String lastName, 
 			              String sex, String address, String city, String state,
-			              int zip, int phoneNumber, Date date, String methodOfTrans,
+			              String zip, long phoneNumber, Date date, String methodOfTrans,
 			              String carDuringTraining, String email){
 		this.username = username;
 		this.firstName = firstName;
@@ -109,11 +109,11 @@ public class AssociatePOJO {
 		this.state = state;
 	}
 	
-	public int getZip() {
+	public String getZip() {
 		return zip;
 	}
 	
-	public void setZip(int zip) {
+	public void setZip(String zip) {
 		this.zip = zip;
 	}
 	

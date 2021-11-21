@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -42,7 +43,7 @@ public class AdminController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String behavior = request.getParameter("behavior");
         
-    	if (behavior.equalsIgnoreCase("listAssociates")) {  //Admin.jsp -> AdminDash.jsp
+    	if (behavior.equalsIgnoreCase("listAssociates")) {  //Admin.jsp -> AdminDash.jsp	
     		request.setAttribute("associates", dao.getAllAssociates());
     		view = request.getRequestDispatcher(DASHBOARD);
     	} else if (behavior.equalsIgnoreCase("update")){  //AdminDash.jsp or Search.jsp -> Update.jsp
@@ -107,7 +108,7 @@ public class AdminController extends HttpServlet {
         	associate.setAddress(request.getParameter("address"));
         	associate.setCity(request.getParameter("city"));
         	associate.setState(request.getParameter("state"));
-        	associate.setZip(Integer.parseInt(request.getParameter("zip")));
+        	associate.setZip(request.getParameter("zip"));
         	associate.setPhoneNumber(Long.parseLong(request.getParameter("phoneNum")));
             associate.setMethodOfTrans(request.getParameter("methTrans"));
             associate.setCarDuringTraining(request.getParameter("hasCar"));

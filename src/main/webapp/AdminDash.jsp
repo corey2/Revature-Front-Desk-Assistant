@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" 
 	import="com.pojos.java.AssociatePOJO, java.util.Date, java.text.*"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -123,17 +124,18 @@
 									<td>${associate["lastName"]}</td>									
 									<td>
 									<%
-							    		String sex = associate.getSex();
-							    		if (sex != null) {
-								    		if (sex.equals("M")) {
-								    			out.println("Male");
-								    		} else if (sex.equals("F")) {
-								    			out.println("Female");
-								    		} else {
-							    				out.println("Other");
-							    			}
-							    		} else {
-							    			out.println();
+										String sex = associate.getSex();
+							    		if (sex == null) {
+							    			sex = "";
+							    		}
+										if (sex.equals("M")) {
+							    			out.println("Male");
+							    		} else if (sex.equals("F")) {
+							    			out.println("Female");
+							    		} else if (sex.equals("")) {
+							    			out.println("");
+							    		} else {	
+						    				out.println("Other");
 							    		}
 									%>
 									</td>
@@ -141,6 +143,10 @@
 									<td>
 									<% 
 										String phoneString = Long.toString(associate.getPhoneNumber());
+										if (phoneString == null) {
+							    			phoneString = "";
+							    		}
+										
 										if (phoneString.length() == 0) {
 											out.println("Seeing this message on the admin dashboard should be impossible");
 										} else if (phoneString.length() == 1) {
@@ -151,6 +157,7 @@
 										} else {
 											out.println("Invalid phone: "+associate.getPhoneNumber());	
 										}
+									
 									%>
 									</td>
 									<td>${associate["address"]}</td>
@@ -158,14 +165,19 @@
 									<td>${associate["state"]}</td>
 									<td>
 									<% 
-										String zipString = Integer.toString(associate.getZip());
-										if (associate.getZip() == 0) {
-											out.println();
+										String zipString = associate.getZip();
+										if (zipString == null) {
+											zipString = "";
+										}
+									
+										if (zipString.equals("")) {
+											out.println("");
 										} else if (zipString.length() != 5) {					
 											out.println("Zip error: "+associate.getZip());
 										} else {
 											out.println(associate.getZip());
-										}	
+										}
+									
 									%>
 									</td>
 									<td>
@@ -174,7 +186,10 @@
 											Date date = associate.getArrivalDate();
 											SimpleDateFormat formatter = new SimpleDateFormat("MM-dd-yyyy");
 											out.println(formatter.format(date));
+										} else {
+											out.println("");
 										}
+									
 									%>
 									</td>
 									<td>${associate["methodOfTrans"]}</td>

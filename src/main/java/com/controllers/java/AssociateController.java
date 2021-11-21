@@ -54,7 +54,7 @@ public class AssociateController extends HttpServlet {
 		associate.setAddress(request.getParameter("address"));
 		associate.setCity(request.getParameter("city"));
 		associate.setState(request.getParameter("state"));
-		associate.setZip(Integer.parseInt(request.getParameter("zip")));
+		associate.setZip(request.getParameter("zip"));
 		try {
 			Date dob = new SimpleDateFormat("MM.dd.yyyy").parse(request.getParameter("date"));
 			associate.setArrivalDate(dob);

@@ -16,7 +16,6 @@ public class LoginDAO {
 	}
 
 	public void completeUserInfo(LoginPOJO user) {
-		System.out.println("Starting completeUserInfo dao method. The user is "+user.getUsername());
 		ResultSet rs = null;
 		try {  //Gets hashed password and user role from the database using the given username.
 			PreparedStatement preparedStatement = connection

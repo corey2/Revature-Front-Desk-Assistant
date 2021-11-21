@@ -30,7 +30,7 @@ public class AssociateDAO {
             preparedStatement.setString(6, associate.getAddress());
             preparedStatement.setString(7, associate.getCity());
             preparedStatement.setString(8, associate.getState());
-            preparedStatement.setInt(9, associate.getZip());
+            preparedStatement.setString(9, associate.getZip());
             
             java.util.Date utilDate = associate.getArrivalDate();
             
@@ -117,7 +117,7 @@ public class AssociateDAO {
 		associate.setAddress(rs.getString("address"));
 		associate.setCity(rs.getString("city"));
 	    associate.setState(rs.getString("state"));
-	    associate.setZip(rs.getInt("zip"));
+	    associate.setZip(rs.getString("zip"));
 	    associate.setArrivalDate(rs.getDate("arrivalDate"));
 	    associate.setMethodOfTrans(rs.getString("methodOfTrans"));
 	    associate.setCarDuringTraining(rs.getString("carDuringTraining"));

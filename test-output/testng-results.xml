@@ -1,110 +1,278 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="3" passed="2">
+<testng-results skipped="0" failed="3" ignored="0" total="4" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="16880" started-at="2017-01-06T19:44:41Z" finished-at="2017-01-06T19:44:58Z">
+  <suite name="Default suite" duration-ms="10294" started-at="2021-11-20T16:41:44 EST" finished-at="2021-11-20T16:41:54 EST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="16880" started-at="2017-01-06T19:44:41Z" finished-at="2017-01-06T19:44:58Z">
+    <test name="Default test" duration-ms="10294" started-at="2021-11-20T16:41:44 EST" finished-at="2021-11-20T16:41:54 EST">
       <class name="com.testing.test.RFDATest">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.testing.test.RFDATest@5025a98f]" name="beforeSuite" is-config="true" duration-ms="22" started-at="2017-01-06T14:44:41Z" finished-at="2017-01-06T14:44:41Z">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.testing.test.RFDATest@49070868]" name="beforeSuite" is-config="true" duration-ms="7" started-at="2021-11-20T16:41:44 EST" finished-at="2021-11-20T16:41:44 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.testing.test.RFDATest@5025a98f]" name="beforeTest" is-config="true" duration-ms="0" started-at="2017-01-06T14:44:41Z" finished-at="2017-01-06T14:44:41Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.testing.test.RFDATest@49070868]" name="beforeTest" is-config="true" duration-ms="1" started-at="2021-11-20T16:41:44 EST" finished-at="2021-11-20T16:41:44 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.testing.test.RFDATest@5025a98f]" name="beforeClass" is-config="true" duration-ms="3166" started-at="2017-01-06T14:44:41Z" finished-at="2017-01-06T14:44:44Z">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.testing.test.RFDATest@49070868]" name="beforeClass" is-config="true" duration-ms="4224" started-at="2021-11-20T16:41:44 EST" finished-at="2021-11-20T16:41:48 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.testing.test.RFDATest@5025a98f]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2017-01-06T14:44:45Z" finished-at="2017-01-06T14:44:45Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.testing.test.RFDATest@49070868]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2021-11-20T16:41:48 EST" finished-at="2021-11-20T16:41:48 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="homeTest()[pri:0, instance:com.testing.test.RFDATest@5025a98f]" name="homeTest" duration-ms="3833" started-at="2017-01-06T14:44:45Z" finished-at="2017-01-06T14:44:48Z">
+        <test-method status="PASS" signature="homeTest()[pri:0, instance:com.testing.test.RFDATest@49070868]" name="homeTest" duration-ms="4457" started-at="2021-11-20T16:41:48 EST" finished-at="2021-11-20T16:41:53 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- homeTest -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.testing.test.RFDATest@5025a98f]" name="afterMethod" is-config="true" duration-ms="0" started-at="2017-01-06T14:44:48Z" finished-at="2017-01-06T14:44:48Z">
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.testing.test.RFDATest@49070868]" name="afterMethod" is-config="true" duration-ms="1" started-at="2021-11-20T16:41:53 EST" finished-at="2021-11-20T16:41:53 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.testing.test.RFDATest@5025a98f]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2017-01-06T14:44:48Z" finished-at="2017-01-06T14:44:48Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.testing.test.RFDATest@49070868]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2021-11-20T16:41:53 EST" finished-at="2021-11-20T16:41:53 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="loginAdminTest()[pri:1, instance:com.testing.test.RFDATest@5025a98f]" name="loginAdminTest" duration-ms="1308" started-at="2017-01-06T14:44:48Z" finished-at="2017-01-06T14:44:50Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginAdminTest -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.testing.test.RFDATest@5025a98f]" name="afterMethod" is-config="true" duration-ms="1" started-at="2017-01-06T14:44:50Z" finished-at="2017-01-06T14:44:50Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.testing.test.RFDATest@5025a98f]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2017-01-06T14:44:50Z" finished-at="2017-01-06T14:44:50Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="FAIL" signature="adminPageTest()[pri:2, instance:com.testing.test.RFDATest@5025a98f]" name="adminPageTest" duration-ms="6200" started-at="2017-01-06T14:44:50Z" finished-at="2017-01-06T14:44:56Z">
+        <test-method status="FAIL" signature="loginAdminTest()[pri:1, instance:com.testing.test.RFDATest@49070868]" name="loginAdminTest" duration-ms="1191" started-at="2021-11-20T16:41:53 EST" finished-at="2021-11-20T16:41:54 EST">
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[expected [Change Passwordz] but found [Change Password]]]>
+              <![CDATA[expected [Admin Home] but found [Revature Front Desk Assistant]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [Change Passwordz] but found [Change Password]
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:513)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:135)
-	at org.testng.Assert.assertEquals(Assert.java:116)
-	at org.testng.Assert.assertEquals(Assert.java:190)
-	at org.testng.Assert.assertEquals(Assert.java:200)
-	at com.testing.test.RFDATest.adminPageTest(RFDATest.java:75)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:100)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:646)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:811)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1137)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:753)
-	at org.testng.TestRunner.run(TestRunner.java:607)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:368)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:363)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:321)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:270)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1284)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1209)
-	at org.testng.TestNG.runSuites(TestNG.java:1124)
-	at org.testng.TestNG.run(TestNG.java:1096)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+              <![CDATA[java.lang.AssertionError: expected [Admin Home] but found [Revature Front Desk Assistant]
+at org.testng.Assert.fail(Assert.java:97)
+at org.testng.Assert.assertEqualsImpl(Assert.java:136)
+at org.testng.Assert.assertEquals(Assert.java:118)
+at org.testng.Assert.assertEquals(Assert.java:575)
+at org.testng.Assert.assertEquals(Assert.java:585)
+at com.testing.test.RFDATest.loginAdminTest(RFDATest.java:55)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:821)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(ArrayList.java:1257)
+at org.testng.TestRunner.privateRun(TestRunner.java:767)
+at org.testng.TestRunner.run(TestRunner.java:588)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1214)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1136)
+at org.testng.TestNG.runSuites(TestNG.java:1066)
+at org.testng.TestNG.run(TestNG.java:1034)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- adminPageTest -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.testing.test.RFDATest@5025a98f]" name="afterMethod" is-config="true" duration-ms="0" started-at="2017-01-06T14:44:56Z" finished-at="2017-01-06T14:44:56Z">
+        </test-method> <!-- loginAdminTest -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.testing.test.RFDATest@49070868]" name="afterMethod" is-config="true" duration-ms="3" started-at="2021-11-20T16:41:54 EST" finished-at="2021-11-20T16:41:54 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.testing.test.RFDATest@5025a98f]" name="afterClass" is-config="true" duration-ms="2355" started-at="2017-01-06T14:44:56Z" finished-at="2017-01-06T14:44:58Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.testing.test.RFDATest@49070868]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2021-11-20T16:41:54 EST" finished-at="2021-11-20T16:41:54 EST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="FAIL" signature="adminPageTest()[pri:2, instance:com.testing.test.RFDATest@49070868]" name="adminPageTest" duration-ms="82" started-at="2021-11-20T16:41:54 EST" finished-at="2021-11-20T16:41:54 EST">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"name","selector":"adminDashbd"}
+  (Session info: chrome=96.0.4664.45)
+  (Driver info: chromedriver=96.0.4664.45 (76e4c1bb2ab4671b8beba3444e61c0f17584b2fc-refs/branch-heads/4664@{#947}),platform=Windows NT 10.0.19043 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 66 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.0.1', revision: '1969d75', time: '2016-10-18 09:49:13 -0700'
+System info: host: 'DESKTOP-G9MVF03', ip: '192.168.1.33', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_251'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{mobileEmulationEnabled=false, timeouts={implicit=0, pageLoad=300000, script=30000}, hasTouchScreen=false, platform=XP, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:62844}, webauthn:extension:credBlob=true, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, webauthn:extension:largeBlob=true, unexpectedAlertBehaviour=ignore, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=96.0.4664.45 (76e4c1bb2ab4671b8beba3444e61c0f17584b2fc-refs/branch-heads/4664@{#947}), userDataDir=C:\Users\user\AppData\Local\Temp\scoped_dir3208_2120325300}, takesHeapSnapshot=true, pageLoadStrategy=normal, strictFileInteractability=false, databaseEnabled=false, handlesAlerts=true, version=96.0.4664.45, browserConnectionEnabled=false, proxy={}, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true, webauthn:virtualAuthenticators=true}]
+Session ID: 68be8a5059c6c9d660587679b6da175d
+*** Element info: {Using=name, value=adminDashbd}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"name","selector":"adminDashbd"}
+  (Session info: chrome=96.0.4664.45)
+  (Driver info: chromedriver=96.0.4664.45 (76e4c1bb2ab4671b8beba3444e61c0f17584b2fc-refs/branch-heads/4664@{#947}),platform=Windows NT 10.0.19043 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 66 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.0.1', revision: '1969d75', time: '2016-10-18 09:49:13 -0700'
+System info: host: 'DESKTOP-G9MVF03', ip: '192.168.1.33', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_251'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{mobileEmulationEnabled=false, timeouts={implicit=0, pageLoad=300000, script=30000}, hasTouchScreen=false, platform=XP, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:62844}, webauthn:extension:credBlob=true, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, webauthn:extension:largeBlob=true, unexpectedAlertBehaviour=ignore, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=96.0.4664.45 (76e4c1bb2ab4671b8beba3444e61c0f17584b2fc-refs/branch-heads/4664@{#947}), userDataDir=C:\Users\user\AppData\Local\Temp\scoped_dir3208_2120325300}, takesHeapSnapshot=true, pageLoadStrategy=normal, strictFileInteractability=false, databaseEnabled=false, handlesAlerts=true, version=96.0.4664.45, browserConnectionEnabled=false, proxy={}, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true, webauthn:virtualAuthenticators=true}]
+Session ID: 68be8a5059c6c9d660587679b6da175d
+*** Element info: {Using=name, value=adminDashbd}
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByName(RemoteWebDriver.java:449)
+at org.openqa.selenium.By$ByName.findElement(By.java:303)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:360)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke(EventFiringWebDriver.java:103)
+at com.sun.proxy.$Proxy16.findElement(Unknown Source)
+at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:187)
+at com.testing.pageobjects.AdminPage.enterDashbd(AdminPage.java:15)
+at com.testing.test.RFDATest.adminPageTest(RFDATest.java:62)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:821)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(ArrayList.java:1257)
+at org.testng.TestRunner.privateRun(TestRunner.java:767)
+at org.testng.TestRunner.run(TestRunner.java:588)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1214)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1136)
+at org.testng.TestNG.runSuites(TestNG.java:1066)
+at org.testng.TestNG.run(TestNG.java:1034)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- adminPageTest -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.testing.test.RFDATest@49070868]" name="afterMethod" is-config="true" duration-ms="1" started-at="2021-11-20T16:41:54 EST" finished-at="2021-11-20T16:41:54 EST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.testing.test.RFDATest@49070868]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2021-11-20T16:41:54 EST" finished-at="2021-11-20T16:41:54 EST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="FAIL" signature="addAssociate()[pri:4, instance:com.testing.test.RFDATest@49070868]" name="addAssociate" duration-ms="44" started-at="2021-11-20T16:41:54 EST" finished-at="2021-11-20T16:41:54 EST">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[2]/div/div/form/div/p/button[1]"}
+  (Session info: chrome=96.0.4664.45)
+  (Driver info: chromedriver=96.0.4664.45 (76e4c1bb2ab4671b8beba3444e61c0f17584b2fc-refs/branch-heads/4664@{#947}),platform=Windows NT 10.0.19043 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 25 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.0.1', revision: '1969d75', time: '2016-10-18 09:49:13 -0700'
+System info: host: 'DESKTOP-G9MVF03', ip: '192.168.1.33', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_251'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{mobileEmulationEnabled=false, timeouts={implicit=0, pageLoad=300000, script=30000}, hasTouchScreen=false, platform=XP, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:62844}, webauthn:extension:credBlob=true, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, webauthn:extension:largeBlob=true, unexpectedAlertBehaviour=ignore, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=96.0.4664.45 (76e4c1bb2ab4671b8beba3444e61c0f17584b2fc-refs/branch-heads/4664@{#947}), userDataDir=C:\Users\user\AppData\Local\Temp\scoped_dir3208_2120325300}, takesHeapSnapshot=true, pageLoadStrategy=normal, strictFileInteractability=false, databaseEnabled=false, handlesAlerts=true, version=96.0.4664.45, browserConnectionEnabled=false, proxy={}, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true, webauthn:virtualAuthenticators=true}]
+Session ID: 68be8a5059c6c9d660587679b6da175d
+*** Element info: {Using=xpath, value=/html/body/div[2]/div/div/form/div/p/button[1]}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[2]/div/div/form/div/p/button[1]"}
+  (Session info: chrome=96.0.4664.45)
+  (Driver info: chromedriver=96.0.4664.45 (76e4c1bb2ab4671b8beba3444e61c0f17584b2fc-refs/branch-heads/4664@{#947}),platform=Windows NT 10.0.19043 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 25 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.0.1', revision: '1969d75', time: '2016-10-18 09:49:13 -0700'
+System info: host: 'DESKTOP-G9MVF03', ip: '192.168.1.33', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_251'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{mobileEmulationEnabled=false, timeouts={implicit=0, pageLoad=300000, script=30000}, hasTouchScreen=false, platform=XP, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:62844}, webauthn:extension:credBlob=true, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, webauthn:extension:largeBlob=true, unexpectedAlertBehaviour=ignore, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=96.0.4664.45 (76e4c1bb2ab4671b8beba3444e61c0f17584b2fc-refs/branch-heads/4664@{#947}), userDataDir=C:\Users\user\AppData\Local\Temp\scoped_dir3208_2120325300}, takesHeapSnapshot=true, pageLoadStrategy=normal, strictFileInteractability=false, databaseEnabled=false, handlesAlerts=true, version=96.0.4664.45, browserConnectionEnabled=false, proxy={}, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true, webauthn:virtualAuthenticators=true}]
+Session ID: 68be8a5059c6c9d660587679b6da175d
+*** Element info: {Using=xpath, value=/html/body/div[2]/div/div/form/div/p/button[1]}
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:473)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:360)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke(EventFiringWebDriver.java:103)
+at com.sun.proxy.$Proxy16.findElement(Unknown Source)
+at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:187)
+at com.testing.pageobjects.AddUserPage.submit(AddUserPage.java:34)
+at com.testing.test.RFDATest.addAssociate(RFDATest.java:91)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:821)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(ArrayList.java:1257)
+at org.testng.TestRunner.privateRun(TestRunner.java:767)
+at org.testng.TestRunner.run(TestRunner.java:588)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1214)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1136)
+at org.testng.TestNG.runSuites(TestNG.java:1066)
+at org.testng.TestNG.run(TestNG.java:1034)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addAssociate -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.testing.test.RFDATest@49070868]" name="afterMethod" is-config="true" duration-ms="1" started-at="2021-11-20T16:41:54 EST" finished-at="2021-11-20T16:41:54 EST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.testing.test.RFDATest@49070868]" name="afterClass" is-config="true" duration-ms="190" started-at="2021-11-20T16:41:54 EST" finished-at="2021-11-20T16:41:54 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.testing.test.RFDATest@5025a98f]" name="afterTest" is-config="true" duration-ms="0" started-at="2017-01-06T14:44:58Z" finished-at="2017-01-06T14:44:58Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.testing.test.RFDATest@49070868]" name="afterTest" is-config="true" duration-ms="1" started-at="2021-11-20T16:41:54 EST" finished-at="2021-11-20T16:41:54 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.testing.test.RFDATest@5025a98f]" name="afterSuite" is-config="true" duration-ms="0" started-at="2017-01-06T14:44:58Z" finished-at="2017-01-06T14:44:58Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.testing.test.RFDATest@49070868]" name="afterSuite" is-config="true" duration-ms="0" started-at="2021-11-20T16:41:54 EST" finished-at="2021-11-20T16:41:54 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
